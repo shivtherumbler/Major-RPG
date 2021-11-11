@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Walk
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: mixamo.com
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
@@ -526,36 +526,35 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Walking(Clone)
+    - name: Walking 1(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: lower
-      parentName: Walking(Clone)
+      parentName: Walking 1(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: hair
-      parentName: Walking(Clone)
+      parentName: Walking 1(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: upper
-      parentName: Walking(Clone)
+      parentName: Walking 1(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: head
-      parentName: Walking(Clone)
+      parentName: Walking 1(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Walking(Clone)
+      parentName: Walking 1(Clone)
       position: {x: 0.00009059714, y: 0.50383484, z: 0.0040362314}
-      rotation: {x: -0.000000059604638, y: 0.0000000014551911, z: -0.0000000012732925,
-        w: 1}
+      rotation: {x: -0.000000059604638, y: 0.0000000014551911, z: -0.0000000012732925, w: 1}
       scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
     - name: mixamorig:RightUpLeg
       parentName: mixamorig:Hips
@@ -595,8 +594,7 @@ ModelImporter:
     - name: mixamorig:Spine2
       parentName: mixamorig:Spine1
       position: {x: -0, y: 0.06611269, z: -1.0996132e-10}
-      rotation: {x: -0.000000009313226, y: -0.000000002908217, z: -1.1225246e-10,
-        w: 1}
+      rotation: {x: -0.000000009313226, y: -0.000000002908217, z: -1.1225246e-10, w: 1}
       scale: {x: 1.0000001, y: 1, z: 0.99999994}
     - name: mixamorig:Neck
       parentName: mixamorig:Spine2
