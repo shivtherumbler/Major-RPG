@@ -1,0 +1,58 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 14.01.2021 13:59:39
+
+newmtl lower
+	Ns 32.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.4471 0.5490 0.7059
+	Kd 0.4471 0.5490 0.7059
+	Ks 0.3500 0.3500 0.3500
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\on sell\Character\Texture\lower.png
+	map_Kd D:\on sell\Character\Texture\lower.png
+
+newmtl hair
+	Ns 32.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.4471 0.5490 0.7059
+	Kd 0.4471 0.5490 0.7059
+	Ks 0.3500 0.3500 0.3500
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\on sell\Character\Texture\hair.png
+	map_Kd D:\on sell\Character\Texture\hair.png
+
+newmtl upper
+	Ns 32.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.4471 0.5490 0.7059
+	Kd 0.4471 0.5490 0.7059
+	Ks 0.3500 0.3500 0.3500
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\on sell\Character\Texture\upper.png
+	map_Kd D:\on sell\Character\Texture\upper.png
+
+newmtl head
+	Ns 32.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.4471 0.5490 0.7059
+	Kd 0.4471 0.5490 0.7059
+	Ks 0.3500 0.3500 0.3500
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\on sell\Character\Texture\head.png
+	map_Kd D:\on sell\Character\Texture\head.png
