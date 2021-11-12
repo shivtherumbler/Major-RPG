@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
                 {
                     animator.SetBool("Move", false);
                 }
-                
+
 
             }
 
@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
                 animator.SetBool("Move", true);
                 //animator.SetBool("Back", true);
                 //transform.localRotation = Quaternion.Slerp();
-                
+
                 StartCoroutine(RotatePlayer(transform.localRotation, Quaternion.LookRotation(-Cam.transform.forward), 0.5f));
 
                 //Vector3 rot = transform.localRotation.eulerAngles;
