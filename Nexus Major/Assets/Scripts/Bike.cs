@@ -34,6 +34,7 @@ public class Bike : MonoBehaviour
                     OnBike = true;
 
                     Player = other.gameObject;
+                    //Player.GetComponent<Player>().minimapcam.transform.parent = gameObject.transform;
                     //Player.GetComponent<PlayerAim>().LookAim.weight = 0;
                     //IKWeight = Player.GetComponent<PlayerAim>().LookAim.weight;
                     Player.SetActive(false);
@@ -55,7 +56,8 @@ public class Bike : MonoBehaviour
             PlayerCamera.Follow = Player.transform;
             Player.transform.position = DirtBike.transform.position - DirtBike.transform.right;
             Player.SetActive(true);
-            //Player.GetComponent<PlayerAim>().LookAim.weight = IKWeight;
-        }
+        //Player.GetComponent<Player>().minimapcam.transform.parent = Player.transform;
+        //Player.GetComponent<PlayerAim>().LookAim.weight = IKWeight;
+    }
 }
 

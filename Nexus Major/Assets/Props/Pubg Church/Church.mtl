@@ -1,0 +1,212 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 22.06.2017 18:18:52
+
+newmtl ABChurch_Decall_a_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ATownHall_Decal_a_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ATownHall_Decal_a_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ATownHall_Decal_a_N_tga_Normal_Bump.tga
+
+newmtl ATownHall_Steel_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\Iron_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\Iron_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__Iron_N_tga_Normal_Bump.tga
+
+newmtl ABChurch__Roof_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\Metal_Wall_02_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\Metal_Wall_02_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__Metal_Wall_02_N_tga_Normal_Bump.tga
+
+newmtl ABChurch__Wood_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurchWood_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurchWood_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurchWood_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Conceret_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_a__D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_a__D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_Conceret_a__N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Floor_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\T_Town_A_04_floor05_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\T_Town_A_04_floor05_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures_Masks__Alpha_Mask_Holes_01_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Tower_b_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_Tower_b_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Tower_a_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_Tower_a_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Tower_c_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_Tower_c_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Dome_b_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_Dome_b_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Dome_a_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_Dome_a_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Columns_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_Column_N_tga_Normal_Bump.tga
+
+newmtl ABChurch_Walls_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\ABChurch_Conceret_b_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__ABChurch_wall_N_tga_Normal_Bump.tga
+
+newmtl Church_Concrete_Mat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\Church_Conceret_D.tga
+	map_Kd C:\Users\minitiv\Desktop\PLAYERUNKNOWN'S BATTLEGROUNDS\Buildings\Church\Textures\Church_Conceret_D.tga
+	map_bump C__Users_minitiv_Desktop_PLAYERUNKNOWN_S_BATTLEGROUNDS_Buildings_Church_Textures__Church_Conceret_N_tga_Normal_Bump.tga

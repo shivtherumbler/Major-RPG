@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     public Animator animator;
     public GameObject Cam;
+    public GameObject minimapcam;
     public float DirectionDampTime = 0.25f;
     public bool ApplyGravity = true;
     //public bool isAttacking = false;
@@ -404,7 +405,7 @@ public class Player : MonoBehaviour
         if(Input.GetAxis("Vertical") > 0)
         {
             animator.applyRootMotion = false;
-            StartCoroutine(JumpMove(transform.position, transform.position + transform.forward , 0.3f));
+            StartCoroutine(JumpMove(transform.position, transform.position + (transform.forward * 3) , 0.3f));
             Invoke("RootMotion", 0.2f);
 
         }

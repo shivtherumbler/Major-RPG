@@ -51,8 +51,12 @@ public class LineOfSight : MonoBehaviour
                 Speed = 1;
                 anim.SetBool("run", true);
                 anim.SetBool("attack", false);
+                anim.SetBool("back", false);
                 Invoke("Alert", 1f);
-                gameObject.GetComponent<Weapons>().S = false;
+                gun.GetComponent<Weapons>().S = false;
+                gun.GetComponent<Weapons>().enabled = false;
+                
+                
             }
             else
             {
@@ -63,11 +67,13 @@ public class LineOfSight : MonoBehaviour
                 Speed = 0;
                 anim.SetBool("attack", true);
                 anim.SetBool("run", false);
+                anim.SetBool("back", false);
                 alert.SetActive(false);
                 gun.transform.localPosition = new Vector3(-0.6932409f, -0.1737845f, -0.05664165f);
                 gun.transform.localRotation = Quaternion.Euler(-103.221f, 280.21f, -190.331f);
-                gameObject.GetComponent<Weapons>().S = true;
-                
+                gun.GetComponent<Weapons>().enabled = true;
+                gun.GetComponent<Weapons>().S = true;
+
             }
         }
         else
@@ -79,16 +85,25 @@ public class LineOfSight : MonoBehaviour
             Speed = 0;
             anim.SetBool("attack", false);
             anim.SetBool("run", false);
+            anim.SetBool("back", false);
             agent.SetDestination(transform.position);
             alert.SetActive(false);
             gun.transform.localPosition = new Vector3(-0.22f, -0.004f, 0.358f);
             gun.transform.localRotation = Quaternion.Euler(-115.914f, 20.395f, 66.785f);
-            gameObject.GetComponent<Weapons>().S = false;
+            gun.GetComponent<Weapons>().S = false;
+            gun.GetComponent<Weapons>().enabled = false;
+            
         }
         if (State == "Running")
         {
             this.transform.Translate(0, 0, Time.deltaTime * Speed);
 
+        }
+        if(Vector3.Distance(transform.position, Player.position) < 5)
+        {
+
+            StartCoroutine(GoAwayfromEnemy());
+            
         }
     }
 
@@ -107,5 +122,20 @@ public class LineOfSight : MonoBehaviour
             Chest.rotation = Chest.rotation * Quaternion.Euler(Offset);
         }
         
+    }
+
+    IEnumerator GoAwayfromEnemy()
+    {
+        yield return new WaitForSeconds(3f);
+        State = "Running";
+        //stateVis.color = RunningColor;
+        //stateVis.color = Color.yellow;
+        agent.speed = 0;
+        Speed = 1;
+        anim.SetBool("back", true);
+        anim.SetBool("attack", false);
+        gun.GetComponent<Weapons>().S = false;
+        gun.GetComponent<Weapons>().enabled = false;
+
     }
 }

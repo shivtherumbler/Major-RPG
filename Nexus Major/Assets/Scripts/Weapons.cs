@@ -11,7 +11,7 @@ public class Weapons : MonoBehaviour
     {
         if (S == true)
         {
-            GameObject newBullet = (GameObject)Instantiate(Bullet, Muzzle.transform.position, Quaternion.identity);
+            GameObject newBullet = (GameObject)Instantiate(Bullet, Muzzle.transform.position, Bullet.transform.localRotation);
             // newBullet.transform.LookAt(Pos);
             newBullet.GetComponent<Rigidbody>().AddForce(1000 * transform.forward);
         }
