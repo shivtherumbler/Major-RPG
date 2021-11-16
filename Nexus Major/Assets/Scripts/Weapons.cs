@@ -6,24 +6,45 @@ public class Weapons : MonoBehaviour
 {
     public GameObject Bullet;
     public GameObject Muzzle;
+    private bool CanFire;
+    public float FireRate = 0.1f;
     public bool S;
+
+    private void Start()
+    {
+        CanFire = true;
+    }
     public void Shoot()
     {
-        if (S == true)
+        if (CanFire == true)
         {
-            GameObject newBullet = (GameObject)Instantiate(Bullet, Muzzle.transform.position, Bullet.transform.localRotation);
+            CanFire = false;
+            StartCoroutine(Fire());
+        }
+
+        /*if (S == true)
+        {
+            GameObject newBullet = (GameObject)Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             // newBullet.transform.LookAt(Pos);
             newBullet.GetComponent<Rigidbody>().AddForce(1000 * transform.forward);
-        }
+        }*/
     }
     public void Reload()
     {
         S = false;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         Shoot();
+    }
+
+    IEnumerator Fire()
+    {
+        GameObject newBullet = (GameObject)Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+        newBullet.GetComponent<Rigidbody>().AddForce(1000 * transform.forward);
+        yield return new WaitForSeconds(FireRate);
+        CanFire = true;
     }
 
 }

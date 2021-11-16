@@ -41,7 +41,7 @@ public class Bike : MonoBehaviour
                     PlayerOnBike.SetActive(true);
                     PlayerCamera.LookAt = transform;
                     PlayerCamera.Follow = transform;
-                    //other.gameObject.transform.parent = DirtBike.transform;
+                    other.gameObject.transform.parent = DirtBike.transform;
                     DirtBike.activeControl = true;
                 }
             }

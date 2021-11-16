@@ -11,6 +11,9 @@ public class PauseManager : MonoBehaviour
     public GameObject minimap;
     public GameObject mappanel;
     public GameObject inventorypanel;
+    public GameObject targetpos;
+    public GameObject[] inventorylist;
+    public GameObject minimapcam;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class PauseManager : MonoBehaviour
 
             }
         }
+
+        targetpos.transform.position =  GameObject.FindGameObjectWithTag("Player").GetComponent<MissionWaypoint>().target.position;
     }
 
     public void Resume()
@@ -43,6 +48,8 @@ public class PauseManager : MonoBehaviour
         GameIsPaused = false;
         Cursor.visible = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<YoungPlayer>().enabled = true;
+        minimapcam.SetActive(false);
     }
 
     public void Pause()
@@ -53,6 +60,8 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = true;
         minimap.SetActive(true);
         GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<YoungPlayer>().enabled = true;
+        minimapcam.SetActive(true);
     }
 
     public void Restart()
@@ -60,7 +69,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         minimap.SetActive(false);
-        //SceneManager.LoadScene("KidRoom");
+        SceneManager.LoadScene("SampleScene");
 
     }
 
@@ -73,14 +82,21 @@ public class PauseManager : MonoBehaviour
 
     public void Map()
     {
+        minimapcam.SetActive(true);
         mappanel.SetActive(true);
         inventorypanel.SetActive(false);
     }
 
     public void Inventory()
     {
+        minimapcam.SetActive(false);
         inventorypanel.SetActive(true);
         mappanel.SetActive(false);
+    }
+
+    public void CheckItems()
+    {
+        inventorylist[0].SetActive(true);
     }
 
 }

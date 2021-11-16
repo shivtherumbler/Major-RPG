@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     public static Player instance;
     public GameObject weapon;
     public GameObject slash;
+    public InventorySystem.InventoryItem healthpotion;
+    public InventorySystem.InventoryItem sword;
+    public InventoryChannel inventorychannel;
 
     private CharacterController characterController;
 
@@ -34,6 +37,7 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        
     }
 
     void Update()
@@ -322,7 +326,7 @@ public class Player : MonoBehaviour
             {
                 return;
             }
-        }
+        } 
         
     }
 
@@ -347,6 +351,8 @@ public class Player : MonoBehaviour
             StartCoroutine(LadderClimb(transform.position, other.transform.position, 1f));
         }
     }*/
+
+    
 
     private void OnTriggerStay(Collider other)
     {

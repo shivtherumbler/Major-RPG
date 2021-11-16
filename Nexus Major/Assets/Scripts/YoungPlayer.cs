@@ -11,6 +11,8 @@ public class YoungPlayer : MonoBehaviour
     private Vector3 moveDir = Vector3.zero;
     public float Speed = 2.0f;
     public GameObject Cam;
+    public GameObject cutscenecam;
+    public bool cutscene;
 
     // Start is called before the first frame update
     void Start()
@@ -41,72 +43,116 @@ public class YoungPlayer : MonoBehaviour
             bool move = (v > 0 || h != 0);
             float velocity = h * h + v * v;
 
-
-            if (v > 0 || h != 0)
+            if(cutscene == false)
             {
-
-                animator.SetBool("Move", true);
-                //animator.SetBool("Back", false);
-                if (Input.GetAxis("Fire3") > 0 && animator.GetFloat("Walk") < 1)
+                if (v > 0 || h != 0)
                 {
 
-                    animator.SetFloat("Walk", animator.GetFloat("Walk") + 0.01f);
+                    animator.SetBool("Move", true);
+                    //animator.SetBool("Back", false);
+                    if (Input.GetAxis("Fire3") > 0 && animator.GetFloat("Walk") < 1)
+                    {
 
-                }
-                if (Input.GetAxis("Fire3") == 0 && animator.GetFloat("Walk") > 0)
-                {
+                        animator.SetFloat("Walk", animator.GetFloat("Walk") + 0.01f);
 
-                    animator.SetFloat("Walk", animator.GetFloat("Walk") - 0.01f);
+                    }
+                    if (Input.GetAxis("Fire3") == 0 && animator.GetFloat("Walk") > 0)
+                    {
 
-                }
+                        animator.SetFloat("Walk", animator.GetFloat("Walk") - 0.01f);
 
-            }
-            else
-            {
-                if (animator.GetFloat("Walk") > 0)
-                {
-                    animator.SetFloat("Walk", animator.GetFloat("Walk") - 0.01f);
+                    }
 
                 }
                 else
                 {
-                    animator.SetBool("Move", false);
+                    if (animator.GetFloat("Walk") > 0)
+                    {
+                        animator.SetFloat("Walk", animator.GetFloat("Walk") - 0.01f);
+
+                    }
+                    else
+                    {
+                        animator.SetBool("Move", false);
+                    }
+
+
                 }
 
+                if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+                {
 
+                    animator.SetBool("Move", true);
+                    //animator.SetBool("Back", true);
+                    //transform.localRotation = Quaternion.Slerp();
+
+                    StartCoroutine(RotatePlayer(transform.localRotation, Quaternion.LookRotation(-Cam.transform.forward), 0.5f));
+
+                    //Vector3 rot = transform.localRotation.eulerAngles;
+                    //rot = new Vector3(rot.x, rot.y + 180, rot.z);
+                    //transform.localRotation = Quaternion.Euler(rot);
+
+                }
+
+                moveDir = Vector3.forward * v;
+
+                moveDir = transform.TransformDirection(moveDir);
+                moveDir *= Speed;
+
+                if (jump > 0)
+                {
+                    animator.SetBool("Jump", true);
+                }
+                else
+                {
+                    animator.SetBool("Jump", false);
+                }
             }
-
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-
-                animator.SetBool("Move", true);
-                //animator.SetBool("Back", true);
-                //transform.localRotation = Quaternion.Slerp();
-
-                StartCoroutine(RotatePlayer(transform.localRotation, Quaternion.LookRotation(-Cam.transform.forward), 0.5f));
-
-                //Vector3 rot = transform.localRotation.eulerAngles;
-                //rot = new Vector3(rot.x, rot.y + 180, rot.z);
-                //transform.localRotation = Quaternion.Euler(rot);
-
-            }
-
-            moveDir = Vector3.forward * v;
-
-            moveDir = transform.TransformDirection(moveDir);
-            moveDir *= Speed;
 
         }
 
-        if (jump > 0)
+        
+
+        if (cutscenecam.activeInHierarchy)
         {
-            animator.SetBool("Jump", true);
+            cutscene = true;
+            RotationSpeed = 0;
         }
         else
         {
-            animator.SetBool("Jump", false);
+            cutscene = false;
+            RotationSpeed = 240;
+        }    
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Battle")
+        {
+            animator.SetBool("Battle", true);
+            
+            //gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            gameObject.GetComponent<MoveToTarget>().enabled = true;
+
         }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Battle")
+        {
+            animator.SetBool("Battle", false);
+            
+            //gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.GetComponent<MoveToTarget>().enabled = false;
+
+        }
+        /*if (other.tag == "ladder")
+        {
+            animator.SetBool("climb", false);
+        }*/
     }
 
     IEnumerator RotatePlayer(Quaternion start, Quaternion end, float Duration)

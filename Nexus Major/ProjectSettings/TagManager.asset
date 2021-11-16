@@ -13,6 +13,9 @@ TagManager:
   - comedown
   - Pickup
   - Grass
+  - Action
+  - Health
+  - bench
   layers:
   - Default
   - TransparentFX
