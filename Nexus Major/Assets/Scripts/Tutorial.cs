@@ -8,9 +8,8 @@ public class Tutorial : MonoBehaviour
 {
     public GameObject[] popUps;
     public int popupIndex;
-    public GameObject spawner;
     public float waitTime = 2f;
-    public Player player;
+    public GameObject player;
     public bool ButtonSelected;
     public Button mapButton;
 

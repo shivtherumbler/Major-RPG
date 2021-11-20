@@ -10,13 +10,14 @@ public class OldMan : MonoBehaviour
     public GameObject bench;
     public bool sitting;
     public GameObject market;
+    public GameObject cutscenecollider;
 
     public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().youngPlayer;
         bench = GameObject.FindGameObjectWithTag("bench");
     }
 
@@ -41,12 +42,16 @@ public class OldMan : MonoBehaviour
             {
                 animator.SetBool("Walk", false);
             }
-            
+            if(cutscenecollider != null)
+            {
+                cutscenecollider.SetActive(false);
+
+            }
             agent.SetDestination(player.transform.position);
             player.GetComponent<MissionWaypoint>().target = market.transform;
 
         }
-        transform.LookAt(player.transform);
+        //transform.LookAt(player.transform);
 
 
         

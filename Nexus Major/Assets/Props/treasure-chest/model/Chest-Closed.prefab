@@ -188,6 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5636336688637515946}
   - component: {fileID: 3169863192530501174}
+  - component: {fileID: 6799484583991234325}
   m_Layer: 0
   m_Name: Chest-Closed
   m_TagString: Untagged
@@ -224,3 +225,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.99, y: 1.4, z: 1}
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!54 &6799484583991234325
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004513998902510096}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

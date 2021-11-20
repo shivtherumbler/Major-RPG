@@ -16,6 +16,8 @@ TagManager:
   - Action
   - Health
   - bench
+  - character
+  - Shop
   layers:
   - Default
   - TransparentFX

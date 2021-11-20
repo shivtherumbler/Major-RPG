@@ -11,8 +11,10 @@ public class YoungPlayer : MonoBehaviour
     private Vector3 moveDir = Vector3.zero;
     public float Speed = 2.0f;
     public GameObject Cam;
-    public GameObject cutscenecam;
+    public GameObject[] cutscenecam;
     public bool cutscene;
+    public GameObject shopPanel;
+    public bool tutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -111,18 +113,20 @@ public class YoungPlayer : MonoBehaviour
 
         }
 
-        
 
-        if (cutscenecam.activeInHierarchy)
+        for (int i = 0; i < cutscenecam.Length; i++)
         {
-            cutscene = true;
-            RotationSpeed = 0;
+            if (cutscenecam[i].activeInHierarchy)
+            {
+                cutscene = true;
+                RotationSpeed = 0;
+            }
+            else
+            {
+                cutscene = false;
+                RotationSpeed = 240;
+            }
         }
-        else
-        {
-            cutscene = false;
-            RotationSpeed = 240;
-        }    
 
     }
 
@@ -135,6 +139,15 @@ public class YoungPlayer : MonoBehaviour
             //gameObject.GetComponent<NavMeshAgent>().enabled = true;
             gameObject.GetComponent<MoveToTarget>().enabled = true;
 
+        }
+
+        if(other.tag == "Shop")
+        {
+            if(Input.GetKey(KeyCode.E))
+            {
+                shopPanel.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
 
     }
@@ -153,6 +166,13 @@ public class YoungPlayer : MonoBehaviour
         {
             animator.SetBool("climb", false);
         }*/
+
+        if (other.tag == "Shop")
+        {
+            
+            shopPanel.SetActive(false);
+            
+        }
     }
 
     IEnumerator RotatePlayer(Quaternion start, Quaternion end, float Duration)

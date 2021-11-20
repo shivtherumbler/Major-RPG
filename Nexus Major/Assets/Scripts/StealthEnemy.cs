@@ -19,7 +19,7 @@ public class StealthEnemy : MonoBehaviour
     void Start()
     {
         //goalLocations = GameObject.FindGameObjectsWithTag("goal");
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().youngPlayer;
         agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         anim = this.GetComponent<Animator>();

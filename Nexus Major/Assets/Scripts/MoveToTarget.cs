@@ -32,23 +32,25 @@ public class MoveToTarget : MonoBehaviour
                 
             }
         }
-        if (Vector3.Distance(transform.position, closestTarget.position) > 2)
-        {
-            if (Input.GetMouseButton(0))
-            {
-                //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(closestTarget.transform.position), Time.time);
-                transform.LookAt(new Vector3(closestTarget.position.x, transform.position.y, transform.position.z));
-                anim.applyRootMotion = false;
-                StartCoroutine(GoToEnemy(transform.position, closestTarget.position - transform.forward, 1f));
-                anim.SetBool("Enemy", true);
-                Invoke("RootMotion", 1.25f);
 
-                //transform.position = closestTarget.position;
+        if (closestTarget != null)
+        {
+            if (Vector3.Distance(transform.position, closestTarget.position) > 2)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(closestTarget.transform.position), Time.time);
+                    transform.LookAt(new Vector3(closestTarget.position.x, transform.position.y, transform.position.z));
+                    anim.applyRootMotion = false;
+                    StartCoroutine(GoToEnemy(transform.position, closestTarget.position - transform.forward, 1f));
+                    anim.SetBool("Enemy", true);
+                    Invoke("RootMotion", 1.25f);
+
+                    //transform.position = closestTarget.position;
+                }
             }
         }
-            
-
-
+        
     }
 
     /*public void ChooseTarget()
