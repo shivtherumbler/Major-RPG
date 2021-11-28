@@ -15,6 +15,7 @@ public class StealthEnemy : MonoBehaviour
     private float fleeRadius = 15;
     public GameObject player;
     public RaycastHit hitinfo;
+    public GameObject gameoverPanel;
 
     void Start()
     {
@@ -117,6 +118,12 @@ public class StealthEnemy : MonoBehaviour
                 agent.angularSpeed = 500;
             }
         }
+    }
+
+    public void Gameover()
+    {
+        Time.timeScale = 0f;
+        gameoverPanel.SetActive(true);
     }
 }
 

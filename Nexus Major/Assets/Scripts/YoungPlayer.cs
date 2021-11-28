@@ -15,6 +15,7 @@ public class YoungPlayer : MonoBehaviour
     public bool cutscene;
     public GameObject shopPanel;
     public bool tutorial;
+    public bool crouch;
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +110,11 @@ public class YoungPlayer : MonoBehaviour
                 {
                     animator.SetBool("Jump", false);
                 }
+
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    animator.SetBool("crouch", crouch = !crouch);
+                }
             }
 
         }
@@ -120,6 +126,7 @@ public class YoungPlayer : MonoBehaviour
             {
                 cutscene = true;
                 RotationSpeed = 0;
+                animator.SetBool("Move", false);
             }
             else
             {
@@ -134,7 +141,6 @@ public class YoungPlayer : MonoBehaviour
     {
         if (other.tag == "Battle")
         {
-            animator.SetBool("Battle", true);
             
             //gameObject.GetComponent<NavMeshAgent>().enabled = true;
             gameObject.GetComponent<MoveToTarget>().enabled = true;
@@ -156,7 +162,6 @@ public class YoungPlayer : MonoBehaviour
     {
         if (other.tag == "Battle")
         {
-            animator.SetBool("Battle", false);
             
             //gameObject.GetComponent<NavMeshAgent>().enabled = false;
             gameObject.GetComponent<MoveToTarget>().enabled = false;

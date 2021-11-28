@@ -13,7 +13,7 @@ public class CrowdBot : MonoBehaviour
     private float sppedMult;
     private float detectionRadius = 25;
     private float fleeRadius = 15;
-
+    public GameObject[] Enemy;
     
     void Start () {
         //goalLocations = GameObject.FindGameObjectsWithTag("goal");
@@ -58,6 +58,19 @@ public class CrowdBot : MonoBehaviour
         }
 
         agent.speed = 0.1f;
+
+        for(int i = 0; i< Enemy.Length; i++)
+        {
+            if (Enemy[i].activeInHierarchy)
+            {
+                anim.SetBool("run", true);
+            }
+            else
+            {
+                anim.SetBool("run", false);
+            }
+        }
+        
     }
 
     public void DetectNewObstacle(Vector3 position)

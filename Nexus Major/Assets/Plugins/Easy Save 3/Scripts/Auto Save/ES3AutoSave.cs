@@ -60,7 +60,7 @@ public class ES3AutoSave : MonoBehaviour, ISerializationCallbackReceiver
     {
         ES3AutoSaveMgr.RemoveAutoSave(this);
         ES3.DeleteFile();
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("SampleScene");
     }
 
     public void OnApplicationQuit()

@@ -119,8 +119,19 @@ public class ES3AutoSaveMgr : MonoBehaviour
 
     public void StartGame()
     {
-        
-        SceneManager.LoadScene("SampleScene");
+        StartCoroutine(LoadYourAsyncScene("SampleScene"));
+        //SceneManager.LoadScene("SampleScene");
+    }
+
+    IEnumerator LoadYourAsyncScene(string SceneName)
+    {
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneName);
+        while (asyncLoad.progress < 1)
+        {
+            //slider.GetComponent<Slider>().value = asyncLoad.progress;
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     void OnApplicationQuit()

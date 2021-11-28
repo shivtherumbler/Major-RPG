@@ -7,6 +7,7 @@ public class CutScene2 : MonoBehaviour
 {
     public GameObject player;
     public PlayableDirector playableDirector;
+    public GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class CutScene2 : MonoBehaviour
         if (playableDirector == aDirector)
         {
             //Destroy(gameObject, 1f);
+            player.GetComponent<MissionWaypoint>().target = target.transform;
             gameObject.SetActive(false);
         }
     }
