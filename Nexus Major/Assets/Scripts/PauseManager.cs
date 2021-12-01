@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using Cinemachine;
 
 public class PauseManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PauseManager : MonoBehaviour
     public GameObject targetpos;
     public GameObject[] inventorylist;
     public GameObject minimapcam;
+    public CinemachineFreeLook[] CurrentCam;
 
     // Start is called before the first frame update
     void Start()
@@ -43,12 +45,13 @@ public class PauseManager : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().youngPlayer.activeInHierarchy)
         {
             targetpos.transform.position = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().youngPlayer.GetComponent<MissionWaypoint>().target.position;
+            YoungSelect(CurrentCam[1]);
 
         }
         else if (GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().finalPlayer.activeInHierarchy)
         {
             targetpos.transform.position = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().finalPlayer.GetComponent<MissionWaypoint>().target.position;
-
+            FinalSelect(CurrentCam[0]);
         }
     }
 
@@ -141,6 +144,20 @@ public class PauseManager : MonoBehaviour
     {
         shoppanel.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void YoungSelect(CinemachineFreeLook NextCam)
+    {
+        CurrentCam[0].Priority = 0;
+        NextCam.Priority = 10;
+        //CurrentCam = NextCam;
+    }
+
+    public void FinalSelect(CinemachineFreeLook NextCam)
+    {
+        CurrentCam[1].Priority = 0;
+        NextCam.Priority = 10;
+        //EscapeCam = NextCam;
     }
 
 }

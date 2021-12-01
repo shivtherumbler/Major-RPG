@@ -12,6 +12,8 @@ public class Bike : MonoBehaviour
         private GameObject Player;
         private bool OnBike;
         private float IKWeight;
+        public GameObject sound;
+
         void Start()
         {
             OnBike = false;
@@ -26,7 +28,7 @@ public class Bike : MonoBehaviour
         }
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<Player>())
+            if (other.gameObject.tag == "character" && other.gameObject.GetComponent<Player>())
             {
                 //Debug.Log("BIKE");
                 if (Input.GetKey(KeyCode.F) && OnBike == false)
@@ -43,6 +45,7 @@ public class Bike : MonoBehaviour
                     PlayerCamera.Follow = transform;
                     other.gameObject.transform.parent = DirtBike.transform;
                     DirtBike.activeControl = true;
+                    sound.SetActive(true);
                 }
             }
         }
@@ -56,6 +59,7 @@ public class Bike : MonoBehaviour
             PlayerCamera.Follow = Player.transform;
             Player.transform.position = DirtBike.transform.position - DirtBike.transform.right;
             Player.SetActive(true);
+            sound.SetActive(false);
         //Player.GetComponent<Player>().minimapcam.transform.parent = Player.transform;
         //Player.GetComponent<PlayerAim>().LookAim.weight = IKWeight;
     }

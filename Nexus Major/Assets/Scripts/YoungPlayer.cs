@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class YoungPlayer : MonoBehaviour
 {
@@ -16,12 +17,15 @@ public class YoungPlayer : MonoBehaviour
     public GameObject shopPanel;
     public bool tutorial;
     public bool crouch;
+    public GameObject itemcollectedtext;
+    public GameObject cutscene8;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        itemcollectedtext.GetComponent<Text>().text = "";
     }
 
     // Update is called once per frame
@@ -137,6 +141,18 @@ public class YoungPlayer : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "stick")
+        {
+            itemcollectedtext.GetComponent<Text>().text = "Roshi's stick collected";
+            Destroy(other.gameObject, 0.2f);
+            Invoke("TextOff", 5f);
+            cutscene8.SetActive(true);
+            gameObject.GetComponent<MissionWaypoint>().target = cutscene8.transform;
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Battle")
@@ -220,5 +236,10 @@ public class YoungPlayer : MonoBehaviour
             t += Time.deltaTime;
         }
 
+    }
+
+    public void TextOff()
+    {
+        itemcollectedtext.GetComponent<Text>().text = "";
     }
 }

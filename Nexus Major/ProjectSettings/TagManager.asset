@@ -18,6 +18,7 @@ TagManager:
   - bench
   - character
   - Shop
+  - stick
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - Minimap
   - Water
   - UI
-  - 
-  - 
+  - PostProcess
+  - Legend
   - 
   - 
   - 
