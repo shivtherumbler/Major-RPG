@@ -14,6 +14,7 @@ namespace UnityStandardAssets.Water
             Refractive = 2,
         };
 
+        public GameObject pausepanel;
 
         public WaterMode waterMode = WaterMode.Refractive;
         public bool disablePixelLights = true;
@@ -196,6 +197,15 @@ namespace UnityStandardAssets.Water
         // old cards to make water texture scroll.
         void Update()
         {
+            if(pausepanel.activeInHierarchy)
+            {
+                waterMode = WaterMode.Refractive;
+            }
+            else
+            {
+                waterMode = WaterMode.Simple;
+            }
+
             if (!GetComponent<Renderer>())
             {
                 return;

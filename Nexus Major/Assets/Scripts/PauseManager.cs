@@ -149,14 +149,14 @@ public class PauseManager : MonoBehaviour
     public void YoungSelect(CinemachineFreeLook NextCam)
     {
         CurrentCam[0].Priority = 0;
-        NextCam.Priority = 10;
+        NextCam.Priority = 20;
         //CurrentCam = NextCam;
     }
 
     public void FinalSelect(CinemachineFreeLook NextCam)
     {
         CurrentCam[1].Priority = 0;
-        NextCam.Priority = 10;
+        NextCam.Priority = 20;
         //EscapeCam = NextCam;
     }
 

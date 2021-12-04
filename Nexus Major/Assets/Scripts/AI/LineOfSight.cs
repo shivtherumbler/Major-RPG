@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class LineOfSight : MonoBehaviour
 {
     public Transform Player;
+    public GameObject finalPlayer;
     public GameObject alert;
     public SpriteRenderer stateVis;
     public float visDistance;
@@ -22,11 +23,14 @@ public class LineOfSight : MonoBehaviour
     public Animator anim;
     public GameObject gun;
     public Vector3 Offset;
+    public GameObject gameoverPanel;
 
     void Start()
     {
         //mRenderer = GetComponent<MeshRenderer>();
         GetComponent<Animator>().SetFloat("Offset", Random.Range(0.0f, 1.0f));
+        finalPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().finalPlayer;
+
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class LineOfSight : MonoBehaviour
         agent.SetDestination(Player.position - gameObject.transform.forward);
         Vector3 direction = Player.position - this.transform.position;
         float angle = Vector3.Angle(direction, this.transform.forward);
+
         if (direction.magnitude < visDistance && angle < visAngle)
         {
             direction.y = 0;
@@ -52,11 +57,32 @@ public class LineOfSight : MonoBehaviour
                 anim.SetBool("run", true);
                 anim.SetBool("attack", false);
                 anim.SetBool("back", false);
-                Invoke("Alert", 1f);
+                Invoke("OffAlert", 1f);
                 gun.GetComponent<Weapons>().S = false;
                 gun.GetComponent<Weapons>().enabled = false;
-                
-                
+
+
+                finalPlayer.GetComponent<Player>().animator.SetBool("Battle", false);
+                //finalPlayer.GetComponent<Player>().weapon.SetActive(false);
+                //finalPlayer.GetComponent<MoveToTarget>().enabled = false;
+                //finalPlayer.GetComponent<MoveToTarget>().Targets = new Transform[transform.childCount];
+
+                //for (int i = 0; i < transform.childCount; i++)
+                //{
+
+                //other.GetComponent<MoveToTarget>().Targets[i].GetComponent<AINavMesh>().enabled = false;
+
+                //gameObject.GetComponent<LineOfSight>().anim.SetBool("run", false);
+                //gameObject.GetComponent<LineOfSight>().anim.SetBool("walk", true);
+                //gameObject.GetComponent<LineOfSight>().anim.SetBool("attack", false);
+                //gameObject.GetComponent<LineOfSight>().anim.SetBool("back", false);
+                //gameObject.GetComponent<LineOfSight>().alert.SetActive(false);
+                //gameObject.GetComponent<LineOfSight>().enabled = false;
+                gameObject.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().enabled = false;
+                //gameObject.GetComponent<CrowdBot>().enabled = true;
+
+                //}
+                //finalPlayer.GetComponent<MoveToTarget>().Targets = null;
             }
             else
             {
@@ -74,6 +100,18 @@ public class LineOfSight : MonoBehaviour
                 gun.GetComponent<Weapons>().enabled = true;
                 gun.GetComponent<Weapons>().S = true;
 
+                finalPlayer.GetComponent<Player>().animator.SetBool("Battle", true);
+                finalPlayer.GetComponent<Player>().weapon.SetActive(true);
+                //finalPlayer.GetComponent<MoveToTarget>().enabled = true;
+                //finalPlayer.GetComponent<MoveToTarget>().Targets = new Transform[transform.childCount];
+
+                //for (int i = 0; i < transform.childCount; i++)
+                //{
+                    gameObject.GetComponent<CrowdBot>().anim.SetBool("walk", false);
+                    gameObject.GetComponent<CrowdBot>().enabled = false;
+                    //other.GetComponent<MoveToTarget>().Targets[i].GetComponent<AINavMesh>().enabled = true;       
+                    gameObject.GetComponent<LineOfSight>().enabled = true;
+                //}
             }
         }
         else
@@ -92,18 +130,32 @@ public class LineOfSight : MonoBehaviour
             gun.transform.localRotation = Quaternion.Euler(-115.914f, 20.395f, 66.785f);
             gun.GetComponent<Weapons>().S = false;
             gun.GetComponent<Weapons>().enabled = false;
-            
+
+            finalPlayer.GetComponent<Player>().animator.SetBool("Battle", false);
+            finalPlayer.GetComponent<Player>().weapon.SetActive(false);
+            //finalPlayer.GetComponent<MoveToTarget>().enabled = false;
+
+            ///for (int i = 0; i < transform.childCount; i++)
+            //{
+
+                //other.GetComponent<MoveToTarget>().Targets[i].GetComponent<AINavMesh>().enabled = false;
+
+                gameObject.GetComponent<LineOfSight>().anim.SetBool("run", false);
+                gameObject.GetComponent<LineOfSight>().anim.SetBool("walk", true);
+                gameObject.GetComponent<LineOfSight>().anim.SetBool("attack", false);
+                gameObject.GetComponent<LineOfSight>().anim.SetBool("back", false);
+                gameObject.GetComponent<LineOfSight>().alert.SetActive(false);
+                gameObject.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().enabled = false;
+                gameObject.GetComponent<CrowdBot>().enabled = true;
+                gameObject.GetComponent<LineOfSight>().enabled = false;
+
+            //}
+            //finalPlayer.GetComponent<MoveToTarget>().Targets = null;
         }
         if (State == "Running")
         {
             this.transform.Translate(0, 0, Time.deltaTime * Speed);
 
-        }
-        if(Vector3.Distance(transform.position, Player.position) < 5)
-        {
-
-            StartCoroutine(GoAwayfromEnemy());
-            
         }
     }
 
@@ -114,28 +166,21 @@ public class LineOfSight : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(gameObject.GetComponent<Weapons>().S == true)
+        if (gameObject.GetComponent<Weapons>().S == true)
         {
             Transform Chest = anim.GetBoneTransform(HumanBodyBones.Spine);
             Debug.Log(Chest);
             Chest.LookAt(Player.transform.position);
             Chest.rotation = Chest.rotation * Quaternion.Euler(Offset);
         }
-        
+
     }
 
-    IEnumerator GoAwayfromEnemy()
+    public void GameOver()
     {
-        yield return new WaitForSeconds(5f);
-        State = "Running";
-        //stateVis.color = RunningColor;
-        //stateVis.color = Color.yellow;
-        agent.speed = 0;
-        Speed = 1;
-        anim.SetBool("back", true);
-        anim.SetBool("attack", false);
-        gun.GetComponent<Weapons>().S = false;
-        gun.GetComponent<Weapons>().enabled = false;
 
+        Time.timeScale = 0f;
+        gameoverPanel.SetActive(true);
     }
+
 }

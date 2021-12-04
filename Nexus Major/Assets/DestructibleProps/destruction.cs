@@ -11,7 +11,7 @@ public class destruction : MonoBehaviour {
 	public float strength = 5; //How easily the object brokes.
 	public bool BreakByClick = false;
 	public bool DestroyAftertime = true; //if true, then chunks will be destroyed after time.
-	public float time = 15; //time before chunks will be destroyed from the scene.
+	public float time = 5; //time before chunks will be destroyed from the scene.
 	public GameObject FX;
 	public bool AutoDestroy = true; //if true, then object will be automatically break after after "AutoDestTime" since game start.
 	public float AutoDestTime = 2; //Auto destruction time (counts from game start).

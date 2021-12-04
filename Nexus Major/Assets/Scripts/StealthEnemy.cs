@@ -21,7 +21,7 @@ public class StealthEnemy : MonoBehaviour
     {
         //goalLocations = GameObject.FindGameObjectsWithTag("goal");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().youngPlayer;
-        agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = this.GetComponent<NavMeshAgent>();
         agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         anim = this.GetComponent<Animator>();
         GetComponent<Animator>().SetFloat("Offset", Random.Range(0.0f, 1.0f));
@@ -72,11 +72,8 @@ public class StealthEnemy : MonoBehaviour
                 if (Vector3.Distance(transform.position, player.transform.position) < 10)
                 {
                     anim.SetBool("walk", false);
-                    player.GetComponent<MoveToTarget>().Targets = new Transform[transform.childCount];
-                    for (int i = 0; i < transform.childCount; i++)
-                    {
-                        player.GetComponent<MoveToTarget>().Targets[i] = transform.GetChild(i);
-                    }
+                    //player.GetComponent<MoveToTarget>().Targets.Add(transform);
+                    
                     gameObject.GetComponent<PlayerDetection>().enabled = true;
                 }
 
@@ -91,7 +88,7 @@ public class StealthEnemy : MonoBehaviour
             gameObject.GetComponent<PlayerDetection>().enabled = false;
             gameObject.GetComponent<PlayerDetection>().gun.GetComponent<Weapons>().enabled = false;
             gameObject.GetComponent<PlayerDetection>().enabled = false;
-            player.GetComponent<MoveToTarget>().Targets = null;
+            //player.GetComponent<MoveToTarget>().Targets = null;
         }
     }
     public void DetectNewObstacle(Vector3 position)

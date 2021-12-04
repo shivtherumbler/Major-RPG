@@ -31,10 +31,10 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp-firstpass
     - Cinemachine
+    - Assembly-CSharp
     - InventorySystem
     - NavMeshComponentsExamples
     - NavMeshComponentsTestsPlaymode
-    - Assembly-CSharp
     - NavMeshComponents
     - NavMeshComponentsEditor
     - NavMeshComponentsTestsEditmode

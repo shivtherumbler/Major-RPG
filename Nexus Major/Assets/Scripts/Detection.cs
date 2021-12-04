@@ -8,17 +8,17 @@ public class Detection : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<MoveToTarget>().Targets = new Transform[transform.childCount];
+            other.GetComponent<MoveToTarget>().Targets.Add(transform);
 
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                other.GetComponent<MoveToTarget>().Targets[i] = transform.GetChild(i);
-                other.GetComponent<MoveToTarget>().Targets[i].GetComponent<StealthEnemy>().anim.SetBool("walk", false);
-                other.GetComponent<MoveToTarget>().Targets[i].GetComponent<StealthEnemy>().enabled = false;
+            //for (int i = 0; i < transform.childCount; i++)
+            //{
+                //other.GetComponent<MoveToTarget>().Targets[i] = transform.GetChild(i);
+                gameObject.GetComponent<StealthEnemy>().anim.SetBool("walk", false);
+                gameObject.GetComponent<StealthEnemy>().enabled = false;
                 //other.GetComponent<MoveToTarget>().Targets[i].GetComponent<AINavMesh>().enabled = true;       
-                other.GetComponent<MoveToTarget>().Targets[i].GetComponent<PlayerDetection>().enabled = true;
+                gameObject.GetComponent<PlayerDetection>().enabled = true;
 
-            }
+            //}
         }
     }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class YoungPlayer : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class YoungPlayer : MonoBehaviour
     public bool crouch;
     public GameObject itemcollectedtext;
     public GameObject cutscene8;
+    public List<CinemachineFreeLook> cinemachines;
+    public int CurrentCamera;
+    public int PreviousCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -137,6 +141,15 @@ public class YoungPlayer : MonoBehaviour
                 cutscene = false;
                 RotationSpeed = 240;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            //camangle = !camangle;
+            PreviousCamera = CurrentCamera;
+            cinemachines[CurrentCamera].Priority = 0;
+            CurrentCamera = (CurrentCamera + 1) % cinemachines.Count;
+            cinemachines[CurrentCamera].Priority = 21;
         }
 
     }

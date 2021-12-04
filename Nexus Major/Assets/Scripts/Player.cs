@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class Player : MonoBehaviour
     public GameObject minimapcam;
     public float DirectionDampTime = 0.25f;
     public bool ApplyGravity = true;
+    public GameObject itemcollectedtext;
     //public bool isAttacking = false;
     public bool canRecieveInput;
     public bool inputRecieved;
     public static Player instance;
     public GameObject weapon;
     public GameObject slash;
+    public bool crouch;
     public InventorySystem.InventoryItem healthpotion;
     public InventorySystem.InventoryItem sword;
     public InventoryChannel inventorychannel;
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
-        
+        itemcollectedtext.GetComponent<Text>().text = "";
     }
 
     void Update()
@@ -212,6 +215,11 @@ public class Player : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            animator.SetBool("crouch", crouch = !crouch);
+        }
+
         /*if(animator.GetBool("climb") == true)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -361,7 +369,7 @@ public class Player : MonoBehaviour
             animator.SetBool("Battle", true);
             weapon.SetActive(true);
             //gameObject.GetComponent<NavMeshAgent>().enabled = true;
-            gameObject.GetComponent<MoveToTarget>().enabled = true;
+            //gameObject.GetComponent<MoveToTarget>().enabled = true;
 
         }
 
@@ -387,7 +395,7 @@ public class Player : MonoBehaviour
             animator.SetBool("Battle", false);
             weapon.SetActive(false);
             //gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            gameObject.GetComponent<MoveToTarget>().enabled = false;
+            //gameObject.GetComponent<MoveToTarget>().enabled = false;
 
         }
         /*if (other.tag == "ladder")

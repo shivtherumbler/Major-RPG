@@ -25,18 +25,37 @@ public class Roshi : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, house.transform.position) > 1)
         {
-            if (Vector3.Distance(transform.position, player[0].transform.position) < 10)
+            if (player[0].activeInHierarchy)
             {
-                animator.SetBool("Walk", true);
-                animator.SetBool("Idle", false);
-                agent.speed = 0.2f;
+                if (Vector3.Distance(transform.position, player[0].transform.position) < 20)
+                {
+                    animator.SetBool("Walk", true);
+                    animator.SetBool("Idle", false);
+                    agent.speed = 0.5f;
+                }
+                else
+                {
+                    animator.SetBool("Walk", false);
+                    animator.SetBool("Idle", true);
+                    agent.speed = 0;
+                }
             }
-            else
+            else if(player[1].activeInHierarchy)
             {
-                animator.SetBool("Walk", false);
-                animator.SetBool("Idle", true);
-                agent.speed = 0;
+                if (Vector3.Distance(transform.position, player[1].transform.position) < 20)
+                {
+                    animator.SetBool("Walk", true);
+                    animator.SetBool("Idle", false);
+                    agent.speed = 0.5f;
+                }
+                else
+                {
+                    animator.SetBool("Walk", false);
+                    animator.SetBool("Idle", true);
+                    agent.speed = 0;
+                }
             }
+            
 
         }
         else

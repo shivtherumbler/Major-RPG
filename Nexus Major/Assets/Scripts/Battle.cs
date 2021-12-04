@@ -20,7 +20,7 @@ public class Battle : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<SelectPlayer>().finalPlayer.GetComponent<MoveToTarget>().Targets = new Transform[transform.childCount];
+            //other.GetComponent<SelectPlayer>().finalPlayer.GetComponent<MoveToTarget>().Targets = new Transform[transform.childCount];
 
             for (int i = 0; i < transform.childCount; i++)
             {

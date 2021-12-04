@@ -19,6 +19,8 @@ TagManager:
   - character
   - Shop
   - stick
+  - bullet
+  - companion
   layers:
   - Default
   - TransparentFX

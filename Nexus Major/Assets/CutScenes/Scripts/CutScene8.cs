@@ -32,7 +32,7 @@ public class CutScene8 : MonoBehaviour
             companion.GetComponent<Roshi>().enabled = true;
             companion.GetComponent<NavMeshAgent>().enabled = true;
             gameObject.SetActive(false);
-            
+
         }
     }
 
@@ -52,7 +52,9 @@ public class CutScene8 : MonoBehaviour
         if (other.gameObject == player)
         {
             playableDirector.Play();
-
+            player.GetComponent<YoungPlayer>().cinemachines[0].Priority = 0;
+            player.GetComponent<YoungPlayer>().cinemachines[1].Priority = 0;
+            player.GetComponent<YoungPlayer>().cinemachines[2].Priority = 0;
         }
     }
 }

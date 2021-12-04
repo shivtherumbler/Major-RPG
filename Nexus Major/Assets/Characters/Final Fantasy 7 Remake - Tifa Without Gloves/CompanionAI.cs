@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class CompanionAI : MonoBehaviour
@@ -14,6 +15,10 @@ public class CompanionAI : MonoBehaviour
     public GameObject cutscenecollider;
     public CinemachineVirtualCamera CurrentCam;
     public CinemachineFreeLook EscapeCam;
+    public int missionno;
+    public List<GameObject> missionpanels;
+    public List<GameObject> missions;
+    public bool ongoingmission;
 
     public NavMeshAgent agent;
 
@@ -64,14 +69,29 @@ public class CompanionAI : MonoBehaviour
                 
                 if (Vector3.Distance(transform.position, player[1].transform.position) < 5)
                 {
-                    if (Input.GetKey(KeyCode.E))
+                    if(ongoingmission == false)
                     {
-                        MissionSelect(CurrentCam);
-                    }
-                    else if (Input.GetKey(KeyCode.Q))
-                    {
-                        EscapeMission(EscapeCam);
-                    }
+                        if (Input.GetKey(KeyCode.E))
+                        {
+                            MissionSelect(CurrentCam);
+                            if (missionno == 0)
+                            {
+                                missionpanels[0].SetActive(true);
+                            }
+                            else if (missionno == 1)
+                            {
+
+                            }
+                        }
+                        else if (Input.GetKey(KeyCode.Q))
+                        {
+                            EscapeMission(EscapeCam);
+                            for (int i = 0; i < missionpanels.Count; i++)
+                            {
+                                missionpanels[i].SetActive(false);
+                            }
+                        }
+                    } 
                 }    
             }
             if (cutscenecollider != null)

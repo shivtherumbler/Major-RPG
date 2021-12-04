@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class MoveToTarget : MonoBehaviour
 {
-    public Transform[] Targets;
+    public List<Transform> Targets;
     //public NavMeshAgent Agent;
     public Animator anim;
     public Transform closestTarget = null;
@@ -21,7 +21,7 @@ public class MoveToTarget : MonoBehaviour
     public void ClosestTarget()
     {
         float closestTargetDistance = float.MaxValue;
-        for (int i = 0; i < Targets.Length; i++)
+        for (int i = 0; i < Targets.Count; i++)
         {
             float distance = Vector3.Distance(transform.position, Targets[i].position);
 
@@ -49,6 +49,11 @@ public class MoveToTarget : MonoBehaviour
                     //transform.position = closestTarget.position;
                 }
             }
+        }
+
+        if(Targets.Count == 0)
+        {
+            closestTarget = null;
         }
         
     }
