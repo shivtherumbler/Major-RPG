@@ -21,12 +21,13 @@ public class Civilians : MonoBehaviour
         agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         anim = this.GetComponent<Animator>();
-        GetComponent<Animator>().SetFloat("Offset", Random.Range(0.0f, 1.0f));
+        
         ResetAgent();
     }
 
     private void ResetAgent()
     {
+        anim.SetFloat("Offset", Random.Range(0.0f, 1.0f));
         //anim.SetFloat("wOffset", Random.Range(0,1));
         //anim.SetTrigger("isWalking");
         float sppedMult = Random.Range(0.35f, 1.5f);

@@ -11,12 +11,12 @@ namespace InventorySystem
         public ItemChangeCallback OnItemChange;
 
         public InventoryItem m_Item;
-        public uint m_Quantity;
+        public int m_Quantity;
 
         public InventoryItem Item => m_Item;
-        public uint Quantity => m_Quantity;
+        public int Quantity => m_Quantity;
 
-        public void StoreItem(InventoryItem item, uint quantity)
+        public void StoreItem(InventoryItem item, int quantity)
         {
             if (m_Item == null || m_Item == item)
             {
@@ -37,7 +37,7 @@ namespace InventorySystem
             OnItemChange?.Invoke();
         }
 
-        public void MoveTo(InventorySlot slotDestination, uint quantity)
+        public void MoveTo(InventorySlot slotDestination, int quantity)
         {
             if (slotDestination == null || quantity > m_Quantity)
             {

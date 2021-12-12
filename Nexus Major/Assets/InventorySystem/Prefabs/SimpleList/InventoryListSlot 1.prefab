@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 8565591403812589970}
   - component: {fileID: 1467804059465247825}
   - component: {fileID: -8619272968209605553}
+  - component: {fileID: 2584389164355322023}
   m_Layer: 5
   m_Name: InventoryListSlot 1
   m_TagString: Untagged
@@ -251,16 +252,46 @@ MonoBehaviour:
     - {fileID: 1467804059465247825}
     - {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
     - {fileID: -8619272968209605553}
-    - {fileID: 9136616307673013130}
-    - {fileID: 5596577518622526675}
-    - {fileID: 5423858500745171000}
-    - {fileID: 8877923982949222955}
-    - {fileID: 8355895092378682818}
-    - {fileID: 8576404020521468829}
+    - {fileID: 2584389164355322023}
+    - {fileID: 11500000, guid: 85946ac572f0b0844b52b797a8508b41, type: 3}
     - {fileID: 6653864624480414965}
     - {fileID: 3366672038779684104}
     - {fileID: 2644106109591340760}
-    _Values: 0077b60be0b28334a1871474ee73e92e2012f3222efaef42975d34fec8681f1047a2a3bb77d81352ce88993464e53c59db9585a2a7b77b048774a23de681fc09a824af6c6d189c02be91ab5a9f45227c8f3bab9244698d2cfacd6373df38f27e747072bfc92f133e067d9fc79d2a5c33971fd7735a5af768245e9a94318177528665a88fdd10ac315e7d885bbc2af031992564946a81f27a054c97a7442c61070acbf2ae09d30e5b1ae8380739b72b048dd26bd558ac8a75656760c98c5e7b32c2c43fd29a97bf1ae9167d7b2b9fdb5e
+    - {fileID: 11400000, guid: c1d3027ae838bdb47be972d5641f59fa, type: 2}
+    - {fileID: 11500000, guid: 193b461135fb29943b3df2f43d508f57, type: 3}
+    - {fileID: 11400000, guid: ca938f3b780a15e489e8978c1aa628a0, type: 2}
+    - {fileID: 11500000, guid: 1e1bdca8a401476429810a908c797638, type: 3}
+    - {fileID: 21300000, guid: e97e2656595cdc6489ef18abcb7f5506, type: 3}
+    - {fileID: 2800000, guid: e97e2656595cdc6489ef18abcb7f5506, type: 3}
+    - {fileID: 11400000, guid: b47ff8a4e4d2a7640bf7c9d93b927adb, type: 2}
+    - {fileID: 21300000, guid: f50eda2dad033c1498289687d443976b, type: 3}
+    - {fileID: 2800000, guid: f50eda2dad033c1498289687d443976b, type: 3}
+    - {fileID: 8877923982949222955}
+    - {fileID: 8355895092378682818}
+    - {fileID: 8576404020521468829}
+    - {fileID: 9136616307673013130}
+    - {fileID: 5596577518622526675}
+    - {fileID: 5423858500745171000}
+    _Values: 0077b60be0b28334a1871474ee73e92e2012f3222efaef42975d34fec8681f102dfec25d471e2b3dce88993464e53c59db9585a2a7b77b048774a23de681fc09a824af6c6d189c02be91ab5a9f45227c29346ea8e28efb1780169ca83e03401f747072bfc92f133e067d9fc79d2a5c33971fd7735a5af768245e9a94318177528665a88fdd10ac31582e89489baf1b0b24de6a1f25a47870656760c98c5e7b32c2c43fd29a97bf1ae9167d7b2b9fdb5e317108508174c221e25a7a4be9a01826631ec1a1062f6f22a44f746370d74e1cb75f6cd90f3fa01b95989abfcb2fde7cc544bb07e3d66901fe190b2f16d96e455768feb6f20dc95c0acbf2ae09d30e5b1ae8380739b72b048dd26bd558ac8a755e7d885bbc2af031992564946a81f27a054c97a7442c6107
+--- !u!114 &2584389164355322023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8565591403812589968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85946ac572f0b0844b52b797a8508b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemname: {fileID: 6653864624480414965}
+  finalPlayer: {fileID: 0}
+  inventorychannel: {fileID: 11400000, guid: c1d3027ae838bdb47be972d5641f59fa, type: 2}
+  items:
+  - {fileID: 11400000, guid: ca938f3b780a15e489e8978c1aa628a0, type: 2}
+  - {fileID: 11400000, guid: b47ff8a4e4d2a7640bf7c9d93b927adb, type: 2}
+  amountleft: {fileID: 8877923982949222955}
 --- !u!1 &8877923982949222955
 GameObject:
   m_ObjectHideFlags: 0

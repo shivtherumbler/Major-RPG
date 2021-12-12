@@ -1,91 +1,257 @@
 fileFormatVersion: 2
 guid: e26e70556bd52af468dffcaa626b3d35
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: ACD_CalfLeft
-    100002: ACD_CalfRight
-    100004: ACD_FootLeft
-    100006: ACD_FootRight
-    100008: ACD_ForearmLeft
-    100010: ACD_ForearmRight
-    100012: ACD_HandLeft
-    100014: ACD_HandRight
-    100016: ACD_HipLeft
-    100018: ACD_HipRight
-    100020: ACD_IndexLeft1
-    100022: ACD_IndexLeft2
-    100024: ACD_IndexRight1
-    100026: ACD_IndexRight2
-    100028: ACD_Pelvis
-    100030: ACD_PinkyLeft1
-    100032: ACD_PinkyLeft2
-    100034: ACD_PinkyRight1
-    100036: ACD_PinkyRight2
-    100038: ACD_ShoulderLeft
-    100040: ACD_ShoulderRight
-    100042: ACD_Spine
-    100044: ACD_ThighLeft
-    100046: ACD_ThighRight
-    100048: ACD_ThumbLeft1
-    100050: ACD_ThumbLeft2
-    100052: ACD_ThumbRight1
-    100054: ACD_ThumbRight2
-    100056: ACD_ToesLeft
-    100058: ACD_ToesRight
-    100060: ACD_Torso
-    100062: ACD_UpperArmLeft
-    100064: ACD_UpperArmRight
-    100066: ACD_WristLeft
-    100068: ACD_WristRight
-    100070: root
-    100072: //RootNode
-    100074: SK_AdvancedCombatDroid
-    100076: RefPosWeapon
-    400000: ACD_CalfLeft
-    400002: ACD_CalfRight
-    400004: ACD_FootLeft
-    400006: ACD_FootRight
-    400008: ACD_ForearmLeft
-    400010: ACD_ForearmRight
-    400012: ACD_HandLeft
-    400014: ACD_HandRight
-    400016: ACD_HipLeft
-    400018: ACD_HipRight
-    400020: ACD_IndexLeft1
-    400022: ACD_IndexLeft2
-    400024: ACD_IndexRight1
-    400026: ACD_IndexRight2
-    400028: ACD_Pelvis
-    400030: ACD_PinkyLeft1
-    400032: ACD_PinkyLeft2
-    400034: ACD_PinkyRight1
-    400036: ACD_PinkyRight2
-    400038: ACD_ShoulderLeft
-    400040: ACD_ShoulderRight
-    400042: ACD_Spine
-    400044: ACD_ThighLeft
-    400046: ACD_ThighRight
-    400048: ACD_ThumbLeft1
-    400050: ACD_ThumbLeft2
-    400052: ACD_ThumbRight1
-    400054: ACD_ThumbRight2
-    400056: ACD_ToesLeft
-    400058: ACD_ToesRight
-    400060: ACD_Torso
-    400062: ACD_UpperArmLeft
-    400064: ACD_UpperArmRight
-    400066: ACD_WristLeft
-    400068: ACD_WristRight
-    400070: root
-    400072: //RootNode
-    400074: SK_AdvancedCombatDroid
-    400076: RefPosWeapon
-    2100000: M_AdvancedCombatDroid_Commando
-    4300000: SK_AdvancedCombatDroid
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: SK_AdvancedCombatDroid
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: ACD_CalfLeft
+  - first:
+      1: 100002
+    second: ACD_CalfRight
+  - first:
+      1: 100004
+    second: ACD_FootLeft
+  - first:
+      1: 100006
+    second: ACD_FootRight
+  - first:
+      1: 100008
+    second: ACD_ForearmLeft
+  - first:
+      1: 100010
+    second: ACD_ForearmRight
+  - first:
+      1: 100012
+    second: ACD_HandLeft
+  - first:
+      1: 100014
+    second: ACD_HandRight
+  - first:
+      1: 100016
+    second: ACD_HipLeft
+  - first:
+      1: 100018
+    second: ACD_HipRight
+  - first:
+      1: 100020
+    second: ACD_IndexLeft1
+  - first:
+      1: 100022
+    second: ACD_IndexLeft2
+  - first:
+      1: 100024
+    second: ACD_IndexRight1
+  - first:
+      1: 100026
+    second: ACD_IndexRight2
+  - first:
+      1: 100028
+    second: ACD_Pelvis
+  - first:
+      1: 100030
+    second: ACD_PinkyLeft1
+  - first:
+      1: 100032
+    second: ACD_PinkyLeft2
+  - first:
+      1: 100034
+    second: ACD_PinkyRight1
+  - first:
+      1: 100036
+    second: ACD_PinkyRight2
+  - first:
+      1: 100038
+    second: ACD_ShoulderLeft
+  - first:
+      1: 100040
+    second: ACD_ShoulderRight
+  - first:
+      1: 100042
+    second: ACD_Spine
+  - first:
+      1: 100044
+    second: ACD_ThighLeft
+  - first:
+      1: 100046
+    second: ACD_ThighRight
+  - first:
+      1: 100048
+    second: ACD_ThumbLeft1
+  - first:
+      1: 100050
+    second: ACD_ThumbLeft2
+  - first:
+      1: 100052
+    second: ACD_ThumbRight1
+  - first:
+      1: 100054
+    second: ACD_ThumbRight2
+  - first:
+      1: 100056
+    second: ACD_ToesLeft
+  - first:
+      1: 100058
+    second: ACD_ToesRight
+  - first:
+      1: 100060
+    second: ACD_Torso
+  - first:
+      1: 100062
+    second: ACD_UpperArmLeft
+  - first:
+      1: 100064
+    second: ACD_UpperArmRight
+  - first:
+      1: 100066
+    second: ACD_WristLeft
+  - first:
+      1: 100068
+    second: ACD_WristRight
+  - first:
+      1: 100070
+    second: root
+  - first:
+      1: 100072
+    second: //RootNode
+  - first:
+      1: 100074
+    second: SK_AdvancedCombatDroid
+  - first:
+      1: 100076
+    second: RefPosWeapon
+  - first:
+      4: 400000
+    second: ACD_CalfLeft
+  - first:
+      4: 400002
+    second: ACD_CalfRight
+  - first:
+      4: 400004
+    second: ACD_FootLeft
+  - first:
+      4: 400006
+    second: ACD_FootRight
+  - first:
+      4: 400008
+    second: ACD_ForearmLeft
+  - first:
+      4: 400010
+    second: ACD_ForearmRight
+  - first:
+      4: 400012
+    second: ACD_HandLeft
+  - first:
+      4: 400014
+    second: ACD_HandRight
+  - first:
+      4: 400016
+    second: ACD_HipLeft
+  - first:
+      4: 400018
+    second: ACD_HipRight
+  - first:
+      4: 400020
+    second: ACD_IndexLeft1
+  - first:
+      4: 400022
+    second: ACD_IndexLeft2
+  - first:
+      4: 400024
+    second: ACD_IndexRight1
+  - first:
+      4: 400026
+    second: ACD_IndexRight2
+  - first:
+      4: 400028
+    second: ACD_Pelvis
+  - first:
+      4: 400030
+    second: ACD_PinkyLeft1
+  - first:
+      4: 400032
+    second: ACD_PinkyLeft2
+  - first:
+      4: 400034
+    second: ACD_PinkyRight1
+  - first:
+      4: 400036
+    second: ACD_PinkyRight2
+  - first:
+      4: 400038
+    second: ACD_ShoulderLeft
+  - first:
+      4: 400040
+    second: ACD_ShoulderRight
+  - first:
+      4: 400042
+    second: ACD_Spine
+  - first:
+      4: 400044
+    second: ACD_ThighLeft
+  - first:
+      4: 400046
+    second: ACD_ThighRight
+  - first:
+      4: 400048
+    second: ACD_ThumbLeft1
+  - first:
+      4: 400050
+    second: ACD_ThumbLeft2
+  - first:
+      4: 400052
+    second: ACD_ThumbRight1
+  - first:
+      4: 400054
+    second: ACD_ThumbRight2
+  - first:
+      4: 400056
+    second: ACD_ToesLeft
+  - first:
+      4: 400058
+    second: ACD_ToesRight
+  - first:
+      4: 400060
+    second: ACD_Torso
+  - first:
+      4: 400062
+    second: ACD_UpperArmLeft
+  - first:
+      4: 400064
+    second: ACD_UpperArmRight
+  - first:
+      4: 400066
+    second: ACD_WristLeft
+  - first:
+      4: 400068
+    second: ACD_WristRight
+  - first:
+      4: 400070
+    second: root
+  - first:
+      4: 400072
+    second: //RootNode
+  - first:
+      4: 400074
+    second: SK_AdvancedCombatDroid
+  - first:
+      4: 400076
+    second: RefPosWeapon
+  - first:
+      21: 2100000
+    second: M_AdvancedCombatDroid_Commando
+  - first:
+      43: 4300000
+    second: SK_AdvancedCombatDroid
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: SK_AdvancedCombatDroid
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -93,7 +259,7 @@ ModelImporter:
       name: M_AdvancedCombatDroid_Commando
     second: {fileID: 2100000, guid: 0f321abdda64614488ea940b10b7c61f, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 1
     materialSearch: 1
     materialLocation: 0
@@ -103,7 +269,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Head' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -126,25 +293,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -153,12 +327,207 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: SK_AdvancedCombatDroid(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SK_AdvancedCombatDroid
+      parentName: SK_AdvancedCombatDroid(Clone)
+      position: {x: -0, y: 0, z: 0.000011787414}
+      rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root
+      parentName: SK_AdvancedCombatDroid(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ACD_Pelvis
+      parentName: root
+      position: {x: 0, y: 0.018948793, z: 1.2208128}
+      rotation: {x: 0.49995425, y: 0.5000458, z: -0.49995393, w: 0.50004613}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: ACD_Spine
+      parentName: ACD_Pelvis
+      position: {x: -0.19154647, y: -0.000000012021628, z: 0.00000031948088}
+      rotation: {x: 0.00009443243, y: 0.00024630644, z: -0.0053999904, w: 0.9999854}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: ACD_Torso
+      parentName: ACD_Spine
+      position: {x: -0.24379043, y: 0.000000017881392, z: -0.00000021934508}
+      rotation: {x: 0.0005481883, y: -0.0003000087, z: 0.006684795, w: 0.99997747}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000002}
+    - name: ACD_ShoulderLeft
+      parentName: ACD_Torso
+      position: {x: -0.45374784, y: -0.5321162, z: 0.02004242}
+      rotation: {x: -0.50292367, y: -0.49699876, z: 0.49669027, w: 0.5033477}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: ACD_UpperArmLeft
+      parentName: ACD_ShoulderLeft
+      position: {x: -0.18801922, y: -2.9802322e-10, z: 0}
+      rotation: {x: 0.6916851, y: -0.005997149, z: 0.007278082, w: 0.7221377}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+    - name: ACD_ForearmLeft
+      parentName: ACD_UpperArmLeft
+      position: {x: -0.7339328, y: 0, z: 0.000000009536743}
+      rotation: {x: 0.7099314, y: -0.026642635, z: -0.020625016, w: -0.7034644}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000001}
+    - name: ACD_WristLeft
+      parentName: ACD_ForearmLeft
+      position: {x: -0.49997643, y: 0.000000076293944, z: 0}
+      rotation: {x: 0.00005522369, y: -0.0037709614, z: -0.005255005, w: 0.9999791}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
+    - name: ACD_HandLeft
+      parentName: ACD_WristLeft
+      position: {x: -0.15690738, y: 0.00003154994, z: 0.0000006103517}
+      rotation: {x: -0.0000012069939, y: -0.000007480382, z: -0.00009028613, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999998}
+    - name: ACD_PinkyLeft1
+      parentName: ACD_HandLeft
+      position: {x: -0.27045214, y: 0.041382458, z: -0.0023523327}
+      rotation: {x: -0.70710295, y: 0.00005826707, z: 0.00004426043, w: 0.7071107}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
+    - name: ACD_PinkyLeft2
+      parentName: ACD_PinkyLeft1
+      position: {x: -0.110828124, y: 3.6389763e-11, z: 0.0000012016311}
+      rotation: {x: -0.0000043511377, y: -0.000005143129, z: -0.000063646825, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000004}
+    - name: ACD_IndexLeft1
+      parentName: ACD_HandLeft
+      position: {x: -0.270454, y: -0.044474795, z: -0.0023385154}
+      rotation: {x: -0.7071061, y: 0.000013335172, z: -0.0000009836225, w: 0.7071074}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000005}
+    - name: ACD_IndexLeft2
+      parentName: ACD_IndexLeft1
+      position: {x: -0.110828005, y: 1.0534986e-11, z: 0.0000011968614}
+      rotation: {x: 0.000000059604623, y: -0.000005573932, z: -0.00000040466816, w: 1}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000008}
+    - name: ACD_ThumbLeft1
+      parentName: ACD_HandLeft
+      position: {x: -0.23410478, y: -0.043811023, z: -0.099120155}
+      rotation: {x: -0.67006916, y: -0.23728788, z: 0.21375798, w: 0.67008156}
+      scale: {x: 0.9999996, y: 0.9999997, z: 0.9999998}
+    - name: ACD_ThumbLeft2
+      parentName: ACD_ThumbLeft1
+      position: {x: -0.11083077, y: 1.935306e-11, z: 0.0000012016594}
+      rotation: {x: -0.0000088810875, y: -0.00007672638, z: 0.000003697849, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
+    - name: ACD_ShoulderRight
+      parentName: ACD_Torso
+      position: {x: -0.45101914, y: 0.5295496, z: 0.018856352}
+      rotation: {x: -0.50108993, y: 0.4988364, z: 0.49743447, w: -0.5026232}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: ACD_UpperArmRight
+      parentName: ACD_ShoulderRight
+      position: {x: -0.18801929, y: -0.0000000032782554, z: 0.00000045776366}
+      rotation: {x: -0.691689, y: -0.0060012317, z: -0.0072738104, w: 0.72213393}
+      scale: {x: 0.9999998, y: 1, z: 0.99999994}
+    - name: ACD_ForearmRight
+      parentName: ACD_UpperArmRight
+      position: {x: -0.7339331, y: -0.000000076293944, z: 0.0000004673004}
+      rotation: {x: 0.7099314, y: 0.02664294, z: -0.020625364, w: 0.7034645}
+      scale: {x: 1.0000004, y: 0.99999994, z: 1.0000001}
+    - name: ACD_WristRight
+      parentName: ACD_ForearmRight
+      position: {x: -0.4999765, y: -0.00000022888183, z: -0.00000015258789}
+      rotation: {x: -0.0000552535, y: -0.0037713493, z: 0.0052542607, w: 0.99997914}
+      scale: {x: 1.0000006, y: 1, z: 1.0000002}
+    - name: ACD_HandRight
+      parentName: ACD_WristRight
+      position: {x: -0.15690742, y: -0.000031547544, z: 0.0000006103702}
+      rotation: {x: 0.0000011983934, y: -0.000007156047, z: 0.00009065475, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+    - name: RefPosWeapon
+      parentName: ACD_HandRight
+      position: {x: -0.29595512, y: -0.033455275, z: -0.0662001}
+      rotation: {x: -0.011409363, y: -0.7369679, z: -0.008240052, w: 0.6757812}
+      scale: {x: 1, y: 0.999999, z: 1}
+    - name: ACD_PinkyRight1
+      parentName: ACD_HandRight
+      position: {x: -0.270452, y: -0.041382417, z: -0.0023523872}
+      rotation: {x: 0.70710284, y: 0.000058327038, z: -0.00004423539, w: 0.7071108}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000005}
+    - name: ACD_PinkyRight2
+      parentName: ACD_PinkyRight1
+      position: {x: -0.11082832, y: 0.000000038146382, z: 0.0000012588519}
+      rotation: {x: 0.000004708764, y: -0.000005028564, z: 0.00006396361, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: ACD_IndexRight1
+      parentName: ACD_HandRight
+      position: {x: -0.270454, y: 0.04447481, z: -0.0023385969}
+      rotation: {x: 0.70710623, y: 0.0000134216525, z: 0.00000094975996, w: 0.7071074}
+      scale: {x: 1.0000005, y: 1, z: 1.0000005}
+    - name: ACD_IndexRight2
+      parentName: ACD_IndexRight1
+      position: {x: -0.11082814, y: -0.000000038166775, z: 0.0000012540836}
+      rotation: {x: 0.000000059604616, y: -0.0000048572397, z: 0.00000017076346, w: 1}
+      scale: {x: 0.99999994, y: 1.0000004, z: 0.99999994}
+    - name: ACD_ThumbRight1
+      parentName: ACD_HandRight
+      position: {x: -0.23410474, y: 0.043811, z: -0.09912025}
+      rotation: {x: 0.67006797, y: -0.23728667, z: -0.21376136, w: 0.6700821}
+      scale: {x: 1, y: 1.0000001, z: 1.0000007}
+    - name: ACD_ThumbRight2
+      parentName: ACD_ThumbRight1
+      position: {x: -0.11083083, y: 0.00000003811061, z: 0.0000012922601}
+      rotation: {x: 0.000009089704, y: -0.00007595408, z: -0.000002734599, w: 1}
+      scale: {x: 0.99999994, y: 1.0000006, z: 1.0000002}
+    - name: ACD_HipLeft
+      parentName: ACD_Pelvis
+      position: {x: -0.016307678, y: -0.24957357, z: -0.008641968}
+      rotation: {x: -0.49594942, y: -0.5040442, z: 0.50176895, w: 0.49819827}
+      scale: {x: 0.9999998, y: 1.0000005, z: 1}
+    - name: ACD_ThighLeft
+      parentName: ACD_HipLeft
+      position: {x: -0.15807083, y: 0.0000000023841857, z: 0}
+      rotation: {x: 0.50192827, y: -0.4936246, z: 0.5005456, w: 0.5038421}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: ACD_CalfLeft
+      parentName: ACD_ThighLeft
+      position: {x: -0.58207506, y: 0.000000076293944, z: -0.000000005960464}
+      rotation: {x: 0.9963207, y: 0.00000077486027, z: 0.0857039, w: 0.0000089108935}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
+    - name: ACD_FootLeft
+      parentName: ACD_CalfLeft
+      position: {x: -0.5304065, y: -0.000000038146972, z: 0.000000057220458}
+      rotation: {x: -0.78891206, y: -0.00000029802322, z: -0.6145061, w: -0.0000006556511}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: ACD_ToesLeft
+      parentName: ACD_FootLeft
+      position: {x: -0.23542224, y: 0, z: 0.00000030517577}
+      rotation: {x: -0.000000011903751, y: -0.058059514, z: 0.000000017391244, w: 0.9983132}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: ACD_HipRight
+      parentName: ACD_Pelvis
+      position: {x: -0.016307678, y: 0.25000155, z: -0.008550109}
+      rotation: {x: -0.4960406, y: 0.50395226, z: 0.5018619, w: -0.49810684}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: ACD_ThighRight
+      parentName: ACD_HipRight
+      position: {x: -0.15807083, y: 0.0000000166893, z: 0}
+      rotation: {x: -0.50179416, y: -0.49375942, z: -0.50038815, w: 0.50399995}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000001}
+    - name: ACD_CalfRight
+      parentName: ACD_ThighRight
+      position: {x: -0.5820746, y: -0.000000038146972, z: 0.00000015497207}
+      rotation: {x: 0.99632096, y: -0.0000013113022, z: 0.08570118, w: -0.000014692545}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: ACD_FootRight
+      parentName: ACD_CalfRight
+      position: {x: -0.53040653, y: 0.00000030517577, z: 0.00000014305114}
+      rotation: {x: -0.7889122, y: 0.00000020861626, z: -0.61450607, w: 0.0000003874302}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: ACD_ToesRight
+      parentName: ACD_FootRight
+      position: {x: -0.23542224, y: -0.000000028610229, z: 0.00000027656554}
+      rotation: {x: 0.00000005537379, y: -0.058059484, z: -0.000000041238494, w: 0.9983132}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -166,13 +535,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: root
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

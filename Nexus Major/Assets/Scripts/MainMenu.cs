@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
 
     public CinemachineVirtualCamera CurrentCam;
+    public GameObject loadingimage;
     public void MenuButtons(CinemachineVirtualCamera NextCam)
     {
         CurrentCam.Priority = 0;
@@ -22,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene(string SceneName)
     {
-
+        loadingimage.SetActive(true);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneName);
         while (asyncLoad.progress < 1)
         {

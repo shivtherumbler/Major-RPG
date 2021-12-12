@@ -15,6 +15,7 @@ public class PauseManager : MonoBehaviour
     public GameObject skillsPanel;
     public GameObject settingsPanel;
     public GameObject shoppanel;
+    public GameObject graphicspanel;
     public GameObject targetpos;
     public GameObject[] inventorylist;
     public GameObject minimapcam;
@@ -52,6 +53,15 @@ public class PauseManager : MonoBehaviour
         {
             targetpos.transform.position = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().finalPlayer.GetComponent<MissionWaypoint>().target.position;
             FinalSelect(CurrentCam[0]);
+        }
+
+        if(shoppanel.activeInHierarchy)
+        {
+            PausePanel.SetActive(false);
+        }
+        else if(PausePanel.activeInHierarchy)
+        {
+            shoppanel.SetActive(false);
         }
     }
 
@@ -158,6 +168,18 @@ public class PauseManager : MonoBehaviour
         CurrentCam[1].Priority = 0;
         NextCam.Priority = 20;
         //EscapeCam = NextCam;
+    }
+
+    public void GraphicsTabOpen()
+    {
+        graphicspanel.SetActive(true);
+        settingsPanel.SetActive(false);
+    }
+
+    public void GraphicsTabClose()
+    {
+        graphicspanel.SetActive(false);
+        settingsPanel.SetActive(true);
     }
 
 }

@@ -19,6 +19,7 @@ public class CompanionAI : MonoBehaviour
     public List<GameObject> missionpanels;
     public List<GameObject> missions;
     public bool ongoingmission;
+    public Text interacttext;
 
     public NavMeshAgent agent;
 
@@ -71,28 +72,41 @@ public class CompanionAI : MonoBehaviour
                 {
                     if(ongoingmission == false)
                     {
+
+                        //interacttext.text = "Press E to start mission!";
                         if (Input.GetKey(KeyCode.E))
                         {
                             MissionSelect(CurrentCam);
-                            if (missionno == 0)
-                            {
-                                missionpanels[0].SetActive(true);
-                            }
-                            else if (missionno == 1)
-                            {
-
-                            }
+                            missions[missionno].SetActive(true);
+                            missionpanels[missionno].SetActive(true);
+                            
+                            //interacttext.text = "Press Q to quit mission!";
                         }
                         else if (Input.GetKey(KeyCode.Q))
                         {
                             EscapeMission(EscapeCam);
                             for (int i = 0; i < missionpanels.Count; i++)
                             {
+                                missions[missionno].SetActive(false);
                                 missionpanels[i].SetActive(false);
+                                //interacttext.text = "Press E to start mission!";
                             }
                         }
+                        
+                        if(missionpanels[missionno].activeInHierarchy)
+                        {
+                            interacttext.text = "Press Q to quit mission!";
+                        }
+                        else
+                        {
+                            interacttext.text = "Press E to start mission!";
+                        }
                     } 
-                }    
+                }
+                else
+                {
+                    interacttext.text = "";
+                }
             }
             if (cutscenecollider != null)
             {

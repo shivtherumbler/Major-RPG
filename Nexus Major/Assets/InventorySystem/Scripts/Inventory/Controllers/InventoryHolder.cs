@@ -5,7 +5,7 @@ public class InventoryHolder : MonoBehaviour
     [SerializeField]
     private InventoryChannel InventoryChannel;
     [SerializeField]
-    private uint DefaultSlotCount = 0;
+    private int DefaultSlotCount = 0;
     [SerializeField]
     private bool CanCreateSlots = false;
 
@@ -19,7 +19,7 @@ public class InventoryHolder : MonoBehaviour
     }
     private void Start()
     {
-        for (uint i = 0; i < DefaultSlotCount; ++i)
+        for (int i = 0; i < DefaultSlotCount; ++i)
         {
             m_Inventory.CreateSlot();
         }
@@ -30,7 +30,7 @@ public class InventoryHolder : MonoBehaviour
         InventoryChannel.OnInventoryItemLoot -= OnInventoryItemLoot;
     }
 
-    private void OnInventoryItemLoot(InventorySystem.InventoryItem item, uint quantity)
+    private void OnInventoryItemLoot(InventorySystem.InventoryItem item, int quantity)
     {
         InventorySystem.InventorySlot slotToUse = m_Inventory.FindFirst(slot => slot.Item == item);
         if (slotToUse == null)

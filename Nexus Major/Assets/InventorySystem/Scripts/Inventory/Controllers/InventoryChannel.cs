@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Inventory/InventoryChannel")]
 public class InventoryChannel : ScriptableObject
 {
-    public delegate void InventoryItemLootCallback(InventorySystem.InventoryItem item, uint quantity);
+    public delegate void InventoryItemLootCallback(InventorySystem.InventoryItem item, int quantity);
 
     public InventoryItemLootCallback OnInventoryItemLoot;
 
@@ -12,8 +12,14 @@ public class InventoryChannel : ScriptableObject
         OnInventoryItemLoot?.Invoke(item, 1);
     }
 
-    public void RaiseLootItem(InventorySystem.InventoryItem item, uint quantity)
+    public void RaiseLootItem(InventorySystem.InventoryItem item, int quantity)
     {
         OnInventoryItemLoot?.Invoke(item, quantity);
+    }
+
+
+    public void UseLootItem(InventorySystem.InventoryItem item)
+    {
+        OnInventoryItemLoot?.Invoke(item, -1);
     }
 }

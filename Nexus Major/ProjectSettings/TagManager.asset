@@ -21,6 +21,10 @@ TagManager:
   - stick
   - bullet
   - companion
+  - crystal
+  - plus
+  - fireplace
+  - star
   layers:
   - Default
   - TransparentFX

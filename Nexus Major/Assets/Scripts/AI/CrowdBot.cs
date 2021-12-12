@@ -29,7 +29,7 @@ public class CrowdBot : MonoBehaviour
         ResetAgent();
     }
 
-    private void ResetAgent()
+    public void ResetAgent()
     {
         //anim.SetFloat("wOffset", Random.Range(0,1));
         //anim.SetTrigger("isWalking");
@@ -74,7 +74,7 @@ public class CrowdBot : MonoBehaviour
                 {
                     anim.SetBool("walk", false);
                     player.GetComponent<Player>().animator.SetBool("Battle", true);
-                    player.GetComponent<Player>().weapon.SetActive(true);
+                    player.GetComponent<Player>().weapon[player.GetComponent<Player>().weaponno].SetActive(true);
                     player.GetComponent<MoveToTarget>().enabled = true;
                     if(addedinlist == false)
                     {
@@ -95,9 +95,9 @@ public class CrowdBot : MonoBehaviour
             player.GetComponent<Player>().animator.SetBool("Battle", false);
             //player.GetComponent<Player>().weapon.SetActive(false);
             gameObject.GetComponent<LineOfSight>().alert.SetActive(false);
-            gameObject.GetComponent<LineOfSight>().enabled = false;
+            //gameObject.GetComponent<LineOfSight>().enabled = false;
             gameObject.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().enabled = false;
-            gameObject.GetComponent<LineOfSight>().enabled = false;
+            //gameObject.GetComponent<LineOfSight>().enabled = false;
             player.GetComponent<MoveToTarget>().Targets.Remove(transform);
             addedinlist = false;
             //player.GetComponent<MoveToTarget>().enabled = false;

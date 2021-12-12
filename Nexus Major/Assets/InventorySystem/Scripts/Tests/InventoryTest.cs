@@ -29,7 +29,7 @@ public class InventoryTest
 
         Inventory inventory = new Inventory();
 
-        for (uint i = 0; i < slotCount; ++i)
+        for (int i = 0; i < slotCount; ++i)
         {
             InventorySlot slot = inventory.CreateSlot();
             slot.StoreItem(testItem, 1);
@@ -62,7 +62,7 @@ public class InventoryTest
 
         Inventory inventory = new Inventory();
 
-        for (uint i = 0; i < slotCount; ++i)
+        for (int i = 0; i < slotCount; ++i)
         {
             InventorySlot slot = inventory.CreateSlot();
             slot.StoreItem(i == 7 ? testItem1 : testItem2, i + 1);
@@ -83,7 +83,7 @@ public class InventoryTest
 
         Inventory inventory = new Inventory();
 
-        for (uint i = 0; i < slotCount; ++i)
+        for (int i = 0; i < slotCount; ++i)
         {
             InventorySlot slot = inventory.CreateSlot();
             slot.StoreItem((i % 3) == 0 ? testItem1 : testItem2, i + 1);

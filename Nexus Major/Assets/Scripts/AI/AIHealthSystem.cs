@@ -10,6 +10,10 @@ public class AIHealthSystem : MonoBehaviour
     //public GameObject companion;
     public MissionManager manager;
     public bool killed;
+    public bool onfire;
+    public GameObject fire;
+    public GameObject[] loot;
+    public int lootno;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +24,76 @@ public class AIHealthSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <=0)
+        lootno = Random.Range(0, 3);
+
+        if (onfire == true)
         {
-            anim.SetBool("death", true);
-            parent.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().enabled = false;
-            parent.GetComponent<CrowdBot>().enabled = false;
-            parent.GetComponent<LineOfSight>().enabled = false;
-            parent.GetComponent<Weapons>().enabled = false;
-            Invoke("SetactiveFalse", 10);
+            fire.SetActive(true);
+            health--;
+            anim.SetBool("onfire", true);
+            if(health <= 0)
+            {
+                anim.SetBool("falltodeath", true);
+                parent.GetComponent<LineOfSight>().CancelInvoke();
+                parent.GetComponent<LineOfSight>().anim.SetBool("back", false);
+                parent.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().enabled = false;
+                parent.GetComponent<CrowdBot>().enabled = false;
+                parent.GetComponent<LineOfSight>().enabled = false;
+                parent.GetComponent<Weapons>().enabled = false;
+                Invoke("SetactiveFalse", 10);
+                anim.SetBool("heavyhit", false);
+                anim.SetBool("lighthit", false);
+                parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<MoveToTarget>().Targets.Remove(parent.transform);
+                parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<Player>().animator.SetBool("Battle", false);
+                
+
+                if (killed == false)
+                {
+                    /*if (companion.GetComponent<CompanionAI>().missionno == 0)
+                    {
+                        companion.GetComponent<CompanionAI>().missions[0].GetComponent<Mission1>().killcount++;
+                        killed = true;
+                    }
+                    else if (companion.GetComponent<CompanionAI>().missionno == 1)
+                    {
+                        companion.GetComponent<CompanionAI>().missions[1].GetComponent<Mission1>().killcount++;
+                        killed = true;
+                    }*/
+                    manager.killcount++;
+                    killed = true;
+                }
+
+                //parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<MoveToTarget>().enabled = false;
+
+                //for (int i = 0; i < transform.childCount; i++)
+                //{
+
+                //other.GetComponent<MoveToTarget>().Targets[i].GetComponent<AINavMesh>().enabled = false;
+
+                parent.GetComponent<LineOfSight>().anim.SetBool("run", false);
+                parent.GetComponent<LineOfSight>().anim.SetBool("walk", true);
+                parent.GetComponent<LineOfSight>().anim.SetBool("attack", false);
+                parent.GetComponent<LineOfSight>().anim.SetBool("back", false);
+                parent.GetComponent<LineOfSight>().alert.SetActive(false);
+                parent.GetComponent<LineOfSight>().enabled = false;
+                parent.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().enabled = false;
+                parent.GetComponent<CrowdBot>().enabled = true;
+            }
+        }
+        else
+        {
+            if (health <= 0)
+            {
+                anim.SetBool("death", true);
+                parent.GetComponent<LineOfSight>().CancelInvoke();
+                parent.GetComponent<LineOfSight>().anim.SetBool("back", false);
+                parent.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().enabled = false;
+                parent.GetComponent<CrowdBot>().enabled = false;
+                parent.GetComponent<LineOfSight>().enabled = false;
+                parent.GetComponent<Weapons>().enabled = false;
+                Invoke("SetactiveFalse", 10);
+
+            }
         }
 
         if (anim.GetBool("death") == true)
@@ -37,7 +103,8 @@ public class AIHealthSystem : MonoBehaviour
             parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<MoveToTarget>().Targets.Remove(parent.transform);
             parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<Player>().animator.SetBool("Battle", false);
             
-            if(killed == false)
+
+            if (killed == false)
             {
                 /*if (companion.GetComponent<CompanionAI>().missionno == 0)
                 {
@@ -51,6 +118,7 @@ public class AIHealthSystem : MonoBehaviour
                 }*/
                 manager.killcount++;
                 killed = true;
+                
             }
             
             //parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<MoveToTarget>().enabled = false;
@@ -78,15 +146,15 @@ public class AIHealthSystem : MonoBehaviour
     {
         if(other.tag == "sword")
         {
-            if(Input.GetKey(KeyCode.Mouse0))
+            if(Input.GetKeyDown(KeyCode.Mouse0))
             {
-                health--;
+                health -= 2;
                 anim.SetBool("lighthit", true);
             }
 
-            else if(Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.LeftShift))
+            else if(Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.LeftShift))
             {
-                health = health - 3;
+                health -= 5;
                 anim.SetBool("heavyhit", true);
             }
             else
@@ -100,6 +168,9 @@ public class AIHealthSystem : MonoBehaviour
     public void SetactiveFalse()
     {
         //parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<Player>().weapon.SetActive(false);
+        
+        loot[lootno].SetActive(true);
+        loot[lootno].transform.parent = null;
         parent.SetActive(false);
     }
 
