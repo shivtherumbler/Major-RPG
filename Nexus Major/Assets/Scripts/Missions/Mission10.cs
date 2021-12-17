@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission10 : MonoBehaviour
@@ -18,6 +19,7 @@ public class Mission10 : MonoBehaviour
     public GameObject cutscenetrigger;
     public GameObject openworldenemies;
     public GameObject openworldcivilians;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class Mission10 : MonoBehaviour
         {
             MissionComplete();
         }
+        objective.text = "Defeat everyone and destroy the Main Base of the Nexus Corp.";
     }
 
     public void StartMission()

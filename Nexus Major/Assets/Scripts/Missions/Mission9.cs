@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission9 : MonoBehaviour
@@ -18,6 +19,7 @@ public class Mission9 : MonoBehaviour
     public GameObject cutscenetrigger;
     public GameObject openworldenemies;
     public GameObject openworldcivilians;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,7 @@ public class Mission9 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        objective.text = "Search the castles and save Grandpa from Nexus Corp.";
     }
 
     public void StartMission()

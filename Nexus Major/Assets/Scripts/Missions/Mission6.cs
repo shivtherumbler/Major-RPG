@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission6 : MonoBehaviour
@@ -18,6 +19,7 @@ public class Mission6 : MonoBehaviour
     public GameObject cutscenetrigger;
     public GameObject openworldenemies;
     public GameObject openworldcivilians;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class Mission6 : MonoBehaviour
         {
             MissionComplete();
         }
+        objective.text = "Capture the factory to stop the supply of weapons for the Nexus guards.";
     }
 
     public void StartMission()

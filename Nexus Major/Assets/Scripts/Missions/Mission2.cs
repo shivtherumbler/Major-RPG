@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission2 : MonoBehaviour
@@ -19,6 +20,7 @@ public class Mission2 : MonoBehaviour
     public GameObject cutscenetrigger;
     public GameObject openworldenemies;
     public GameObject openworldcivilians;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,8 @@ public class Mission2 : MonoBehaviour
         {
             supplies.GetComponent<Collider>().isTrigger = true;
         }
+        objective.text = "Secure the village's food supply from the Nexus guards.";
+
     }
 
     public void StartMission()

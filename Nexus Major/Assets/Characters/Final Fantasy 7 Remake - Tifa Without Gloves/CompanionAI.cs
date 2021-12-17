@@ -20,6 +20,7 @@ public class CompanionAI : MonoBehaviour
     public List<GameObject> missions;
     public bool ongoingmission;
     public Text interacttext;
+    public Text objective;
 
     public NavMeshAgent agent;
 
@@ -101,11 +102,17 @@ public class CompanionAI : MonoBehaviour
                         {
                             interacttext.text = "Press E to start mission!";
                         }
-                    } 
+
+                        objective.text = "No Ongoing Mission";
+                    }
                 }
                 else
                 {
                     interacttext.text = "";
+                    if (ongoingmission == false)
+                    {
+                        objective.text = "No Ongoing Mission";
+                    }
                 }
             }
             if (cutscenecollider != null)

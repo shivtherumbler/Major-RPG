@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission11 : MonoBehaviour
@@ -19,6 +20,7 @@ public class Mission11 : MonoBehaviour
     public GameObject openworldenemies;
     public GameObject openworldcivilians;
     public GameObject campaigncompleted;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,8 @@ public class Mission11 : MonoBehaviour
         {
             MissionComplete();
         }
+
+        objective.text = " This is the Final Battle! Fight back and take back your village from the Nexus Corp.";
     }
 
     public void StartMission()

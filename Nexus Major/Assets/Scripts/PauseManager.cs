@@ -114,6 +114,7 @@ public class PauseManager : MonoBehaviour
         inventorypanel.SetActive(false);
         skillsPanel.SetActive(false);
         settingsPanel.SetActive(false);
+        graphicspanel.SetActive(false);
 
     }
 
@@ -124,6 +125,7 @@ public class PauseManager : MonoBehaviour
         mappanel.SetActive(false);
         skillsPanel.SetActive(false);
         settingsPanel.SetActive(false);
+        graphicspanel.SetActive(false);
 
     }
 
@@ -139,6 +141,7 @@ public class PauseManager : MonoBehaviour
         minimapcam.SetActive(false);
         inventorypanel.SetActive(false);
         settingsPanel.SetActive(false);
+        graphicspanel.SetActive(false);
     }
 
     public void SettingsOpen()
@@ -148,6 +151,7 @@ public class PauseManager : MonoBehaviour
         mappanel.SetActive(false);
         minimapcam.SetActive(false);
         inventorypanel.SetActive(false);
+        graphicspanel.SetActive(false);
     }
 
     public void ShopClose()

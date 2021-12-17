@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission1 : MonoBehaviour
@@ -16,6 +17,7 @@ public class Mission1 : MonoBehaviour
     public GameObject missionpanel;
     public GameObject missioncompleted;
     public GameObject cutscenetrigger;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class Mission1 : MonoBehaviour
         finalPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<SelectPlayer>().finalPlayer;
         companion = GameObject.FindGameObjectWithTag("companion");
         manager.killcount = 0;
+        
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class Mission1 : MonoBehaviour
         {
             MissionComplete();
         }
+        objective.text = "Free the farmers from the Nexus guards.";
     }
 
     public void StartMission()

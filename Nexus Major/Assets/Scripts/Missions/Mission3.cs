@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission3 : MonoBehaviour
@@ -18,6 +19,7 @@ public class Mission3 : MonoBehaviour
     public GameObject cutscenetrigger;
     public GameObject openworldenemies;
     public GameObject openworldcivilians;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,8 @@ public class Mission3 : MonoBehaviour
         {
             MissionComplete();
         }
+        objective.text = "Secure the marketplace to be able to upgrade your inventory and equipments.";
+
     }
 
     public void StartMission()

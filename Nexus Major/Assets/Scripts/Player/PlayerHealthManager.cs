@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class PlayerHealthManager : MonoBehaviour
@@ -17,11 +18,15 @@ public class PlayerHealthManager : MonoBehaviour
     public CinemachineFreeLook EscapeCam;
     public int CurrentCamera;
     public int PreviousCamera;
+    public GameObject healthbar;
+    public Slider[] hpmp;
+    public Text[] hpmptext;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        healthbar.SetActive(true);
     }
 
     // Update is called once per frame
@@ -62,6 +67,13 @@ public class PlayerHealthManager : MonoBehaviour
             CurrentCamera = (CurrentCamera + 1) % cinemachines.Count;
             cinemachines[CurrentCamera].Priority = 21;
         }
+
+        hpmp[0].maxValue = maxhealth;
+        hpmp[1].maxValue = maxmp;
+        hpmp[0].value = health;
+        hpmp[1].value = mp;
+        hpmptext[0].text = health.ToString();
+        hpmptext[1].text = mp.ToString();
     }
 
     private void OnTriggerEnter(Collider other)

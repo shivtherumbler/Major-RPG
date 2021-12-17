@@ -31,5 +31,19 @@ public class MainMenu : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
+
+    public void Open(GameObject open)
+    {
+        open.SetActive(true);
+    }
+    public void Close(GameObject close)
+    {
+        close.SetActive(false);
+    }    
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
 

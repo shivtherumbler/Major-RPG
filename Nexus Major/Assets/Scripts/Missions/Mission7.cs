@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class Mission7 : MonoBehaviour
@@ -18,6 +19,7 @@ public class Mission7 : MonoBehaviour
     public GameObject cutscenetrigger;
     public GameObject openworldenemies;
     public GameObject openworldcivilians;
+    public Text objective;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,7 @@ public class Mission7 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        objective.text = "Collect the safe to unveal a secret documents of Nexus Corp.";
     }
 
     public void StartMission()
