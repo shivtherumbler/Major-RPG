@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AIHealthSystem : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class AIHealthSystem : MonoBehaviour
     public GameObject fire;
     public GameObject[] loot;
     public int lootno;
+    public GameObject[] damagepanels;
+    public GameObject damagepopup;
+    public bool onetime = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +33,11 @@ public class AIHealthSystem : MonoBehaviour
 
         if (onfire == true)
         {
+            if (!onetime)
+            {
+                addscore();
+                onetime = true;
+            }
             fire.SetActive(true);
             health--;
             anim.SetBool("onfire", true);
@@ -43,9 +53,14 @@ public class AIHealthSystem : MonoBehaviour
                 Invoke("SetactiveFalse", 10);
                 anim.SetBool("heavyhit", false);
                 anim.SetBool("lighthit", false);
+                if(parent.GetComponent<WaveAI>() != null)
+                {
+                    parent.GetComponent<WaveAI>().finalPlayer.GetComponent<MoveToTarget>().Targets.Remove(parent.transform);
+
+                }
                 parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<MoveToTarget>().Targets.Remove(parent.transform);
                 parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<Player>().animator.SetBool("Battle", false);
-                
+
 
                 if (killed == false)
                 {
@@ -84,6 +99,11 @@ public class AIHealthSystem : MonoBehaviour
         {
             if (health <= 0)
             {
+                if (!onetime)
+                {
+                    addscore();
+                    onetime = true;
+                }
                 anim.SetBool("death", true);
                 parent.GetComponent<LineOfSight>().CancelInvoke();
                 parent.GetComponent<LineOfSight>().anim.SetBool("back", false);
@@ -100,9 +120,13 @@ public class AIHealthSystem : MonoBehaviour
         {
             anim.SetBool("heavyhit", false);
             anim.SetBool("lighthit", false);
+            if (parent.GetComponent<WaveAI>() != null)
+            {
+                parent.GetComponent<WaveAI>().finalPlayer.GetComponent<MoveToTarget>().Targets.Remove(parent.transform);
+
+            }
             parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<MoveToTarget>().Targets.Remove(parent.transform);
             parent.GetComponent<LineOfSight>().finalPlayer.GetComponent<Player>().animator.SetBool("Battle", false);
-            
 
             if (killed == false)
             {
@@ -150,12 +174,14 @@ public class AIHealthSystem : MonoBehaviour
             {
                 health -= 2;
                 anim.SetBool("lighthit", true);
+                Instantiate(damagepopup, damagepanels[Random.Range(0, 2)].transform);
             }
 
             else if(Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.LeftShift))
             {
                 health -= 5;
                 anim.SetBool("heavyhit", true);
+                Instantiate(damagepopup, damagepanels[Random.Range(0, 2)].transform);
             }
             else
             {
@@ -178,5 +204,11 @@ public class AIHealthSystem : MonoBehaviour
     {
         anim.SetBool("heavyhit", false);
         anim.SetBool("lighthit", false);
+    }
+
+    public void addscore()
+    {
+        parent.GetComponent<WaveAI>().waveSpawnner.Deaths++;
+        parent.GetComponent<WaveAI>().waveSpawnner.Points += 20;
     }
 }

@@ -21,6 +21,11 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("SampleScene"));
     }
 
+    public void SurvivalMode()
+    {
+        StartCoroutine(LoadYourAsyncScene("Survival Mode"));
+    }
+
     IEnumerator LoadYourAsyncScene(string SceneName)
     {
         loadingimage.SetActive(true);

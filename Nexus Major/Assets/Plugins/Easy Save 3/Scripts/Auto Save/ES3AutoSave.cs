@@ -53,7 +53,7 @@ public class ES3AutoSave : MonoBehaviour, ISerializationCallbackReceiver
         //ES3.DeleteFile();
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
-        
+
     }
 
     public void StartGame()

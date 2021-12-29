@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public GameObject shopPanel;
     public GameObject[] cutscenecam;
     public bool cutscene;
+    public AudioSource audioSource;
+    public AudioClip[] clips;
 
     private CharacterController characterController;
 
@@ -168,22 +170,26 @@ public class Player : MonoBehaviour
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && Input.GetKeyDown(KeyCode.LeftControl))
         {
             animator.SetBool("Evade", true);
+            audioSource.PlayOneShot(clips[Random.Range(7, 9)]);
             animator.SetFloat("EvadeDir", 3f);
         }
         else if (h > 0 && Input.GetKeyDown(KeyCode.LeftControl))
         {
             animator.SetBool("Evade", true);
+            audioSource.PlayOneShot(clips[Random.Range(7, 9)]);
             animator.SetFloat("EvadeDir", 1f);
         }
         else if(h < 0 && Input.GetKeyDown(KeyCode.LeftControl))
         {
             animator.SetBool("Evade", true);
+            audioSource.PlayOneShot(clips[Random.Range(7, 9)]);
             animator.SetFloat("EvadeDir",2f);
         }
         
         else if (v > 0 && Input.GetKeyDown(KeyCode.LeftControl))
         {
             animator.SetBool("Evade", true);
+            audioSource.PlayOneShot(clips[Random.Range(7, 9)]);
             animator.SetFloat("EvadeDir", 3f);
         }
         else
@@ -194,7 +200,8 @@ public class Player : MonoBehaviour
 
         if(jump > 0)
         {
-            animator.SetBool("Jump", true);   
+            animator.SetBool("Jump", true);
+            audioSource.PlayOneShot(clips[Random.Range(8, 10)]);
         }
         else
         {
@@ -370,12 +377,14 @@ public class Player : MonoBehaviour
                     animator.SetTrigger("StrongAttack");
                     weapon[weaponno].SetActive(true);
                     Invoke("WeaponOff", 5f);
+                    audioSource.PlayOneShot(clips[Random.Range(0, 7)]);
                 }
                 else if(!Input.GetKey(KeyCode.LeftAlt))
                 {
                     animator.SetTrigger("Attack");
                     weapon[weaponno].SetActive(true);
                     Invoke("WeaponOff", 5f);
+                    audioSource.PlayOneShot(clips[Random.Range(0, 7)]);
                 }
 
             }
@@ -497,6 +506,8 @@ public class Player : MonoBehaviour
     public void SlashOn()
     {
         slash[weaponno].SetActive(true);
+        audioSource.PlayOneShot(clips[Random.Range(0, 7)]);
+
     }
 
     public void SlashOff()

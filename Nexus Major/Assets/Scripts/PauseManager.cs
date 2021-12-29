@@ -16,6 +16,8 @@ public class PauseManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject shoppanel;
     public GameObject graphicspanel;
+    public GameObject controlPanel;
+    public GameObject creditsPanel;
     public GameObject targetpos;
     public GameObject[] inventorylist;
     public GameObject minimapcam;
@@ -115,7 +117,8 @@ public class PauseManager : MonoBehaviour
         skillsPanel.SetActive(false);
         settingsPanel.SetActive(false);
         graphicspanel.SetActive(false);
-
+        controlPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void Inventory()
@@ -126,7 +129,8 @@ public class PauseManager : MonoBehaviour
         skillsPanel.SetActive(false);
         settingsPanel.SetActive(false);
         graphicspanel.SetActive(false);
-
+        controlPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void CheckItems()
@@ -142,6 +146,8 @@ public class PauseManager : MonoBehaviour
         inventorypanel.SetActive(false);
         settingsPanel.SetActive(false);
         graphicspanel.SetActive(false);
+        controlPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void SettingsOpen()
@@ -152,6 +158,20 @@ public class PauseManager : MonoBehaviour
         minimapcam.SetActive(false);
         inventorypanel.SetActive(false);
         graphicspanel.SetActive(false);
+        controlPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+    }
+
+    public void ControlsOpen()
+    {
+        controlPanel.SetActive(true);
+        settingsPanel.SetActive(false);
+        skillsPanel.SetActive(false);
+        mappanel.SetActive(false);
+        minimapcam.SetActive(false);
+        inventorypanel.SetActive(false);
+        graphicspanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void ShopClose()
@@ -186,4 +206,20 @@ public class PauseManager : MonoBehaviour
         settingsPanel.SetActive(true);
     }
 
+    public void CreditsTabOpen()
+    {
+        creditsPanel.SetActive(true);
+        settingsPanel.SetActive(false);
+    }
+
+    public void CreditsTabClose()
+    {
+        creditsPanel.SetActive(false);
+        settingsPanel.SetActive(true);
+    }
+
+    public void Open(GameObject open)
+    {
+        open.SetActive(true);
+    }
 }

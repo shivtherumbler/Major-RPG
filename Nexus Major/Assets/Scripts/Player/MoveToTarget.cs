@@ -145,6 +145,7 @@ public class MoveToTarget : MonoBehaviour
                         {
                             closestTarget.GetComponentInChildren<AIHealthSystem>().onfire = true;
                             gameObject.GetComponent<PlayerHealthManager>().mp -= 10;
+                            gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().clips[Random.Range(9, 15)]);
                         }
                     }
                 }
@@ -156,6 +157,7 @@ public class MoveToTarget : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.F))
                     {
                         gameObject.GetComponent<Player>().slash[3].SetActive(true);
+                        gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().clips[Random.Range(15,18)]);
                         anim.SetTrigger("FinalAttack");
                         Invoke("SlashOff", 3f);
                         if(Targets != null)

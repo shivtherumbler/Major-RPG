@@ -25,6 +25,9 @@ TagManager:
   - plus
   - fireplace
   - star
+  - chest
+  - Enemy
+  - wavemanager
   layers:
   - Default
   - TransparentFX
