@@ -99,11 +99,15 @@ public class AIHealthSystem : MonoBehaviour
         {
             if (health <= 0)
             {
-                if (!onetime)
+                if (parent.GetComponent<WaveAI>() != null)
                 {
-                    addscore();
-                    onetime = true;
+                    if (!onetime)
+                    {
+                        addscore();
+                        onetime = true;
+                    }
                 }
+                    
                 anim.SetBool("death", true);
                 parent.GetComponent<LineOfSight>().CancelInvoke();
                 parent.GetComponent<LineOfSight>().anim.SetBool("back", false);
