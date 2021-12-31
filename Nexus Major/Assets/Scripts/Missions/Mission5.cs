@@ -62,6 +62,7 @@ public class Mission5 : MonoBehaviour
         {
             civilians.transform.GetChild(i).GetComponent<Civilians>().enabled = true;
         }
+        Cursor.visible = true;
     }
 
     public void MissionSelect(CinemachineVirtualCamera NextCam)
@@ -96,5 +97,6 @@ public class Mission5 : MonoBehaviour
         //civilians.SetActive(true);
         manager.xptext.text = "";
         gameObject.SetActive(false);
+        Cursor.visible = false;
     }
 }

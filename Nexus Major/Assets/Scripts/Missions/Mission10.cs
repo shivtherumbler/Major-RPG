@@ -56,6 +56,7 @@ public class Mission10 : MonoBehaviour
         missioncompleted.SetActive(true);
         manager.xptext.text = "2000 XP earned!";
         cutscenetrigger.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void MissionSelect(CinemachineVirtualCamera NextCam)
@@ -88,5 +89,6 @@ public class Mission10 : MonoBehaviour
         openworldenemies.SetActive(false);
         manager.xptext.text = "";
         gameObject.SetActive(false);
+        Cursor.visible = false;
     }
 }

@@ -58,6 +58,7 @@ public class Mission4 : MonoBehaviour
         }
         manager.xptext.text = "250 XP earned!";
         cutscenetrigger.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void MissionSelect(CinemachineVirtualCamera NextCam)
@@ -88,6 +89,6 @@ public class Mission4 : MonoBehaviour
         companion.GetComponent<CompanionAI>().ongoingmission = false;
         manager.xptext.text = "";
         gameObject.SetActive(false);
-        
+        Cursor.visible = false;
     }
 }

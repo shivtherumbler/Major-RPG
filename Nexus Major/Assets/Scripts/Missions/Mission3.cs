@@ -57,6 +57,7 @@ public class Mission3 : MonoBehaviour
         missioncompleted.SetActive(true);
         manager.xptext.text = "200 XP earned!";
         cutscenetrigger.SetActive(true);
+        Cursor.visible = true;
 
     }
 
@@ -91,5 +92,6 @@ public class Mission3 : MonoBehaviour
         openworldenemies.SetActive(false);
         manager.xptext.text = "";
         gameObject.SetActive(false);
+        Cursor.visible = false;
     }
 }

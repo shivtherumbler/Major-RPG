@@ -136,7 +136,7 @@ public class MoveToTarget : MonoBehaviour
 
             if(upgrade[0] == true)
             {
-                if(gameObject.GetComponent<PlayerHealthManager>().mp > 10)
+                if(gameObject.GetComponent<PlayerHealthManager>().mp >= 10)
                 {
                     if (Input.GetKeyDown(KeyCode.V))
                     {

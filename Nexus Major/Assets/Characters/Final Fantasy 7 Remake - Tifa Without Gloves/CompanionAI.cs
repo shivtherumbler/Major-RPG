@@ -80,6 +80,7 @@ public class CompanionAI : MonoBehaviour
                             MissionSelect(CurrentCam);
                             missions[missionno].SetActive(true);
                             missionpanels[missionno].SetActive(true);
+                            Cursor.visible = true;
                             
                             //interacttext.text = "Press Q to quit mission!";
                         }
@@ -90,6 +91,7 @@ public class CompanionAI : MonoBehaviour
                             {
                                 missions[missionno].SetActive(false);
                                 missionpanels[i].SetActive(false);
+                                Cursor.visible = false;
                                 //interacttext.text = "Press E to start mission!";
                             }
                         }

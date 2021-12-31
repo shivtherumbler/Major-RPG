@@ -96,7 +96,7 @@ public class PauseManager : MonoBehaviour
         GameIsPaused = false;
         minimap.SetActive(false);
         //System.IO.File.Delete(Application.persistentDataPath + "/SaveFile.es3");
-        SceneManager.LoadScene("SampleScene");
+        StartCoroutine(LoadYourAsyncScene("SampleScene"));
 
     }
 
@@ -106,7 +106,7 @@ public class PauseManager : MonoBehaviour
         GameIsPaused = false;
         //ES3.DeleteFile();
         //System.IO.File.Delete(Application.persistentDataPath + "/SaveFile.es3");
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(LoadYourAsyncScene("MainMenu"));
     }
 
     public void Map()
@@ -221,5 +221,16 @@ public class PauseManager : MonoBehaviour
     public void Open(GameObject open)
     {
         open.SetActive(true);
+    }
+
+    IEnumerator LoadYourAsyncScene(string SceneName)
+    {
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneName);
+        while (asyncLoad.progress < 1)
+        {
+            //slider.GetComponent<Slider>().value = asyncLoad.progress;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

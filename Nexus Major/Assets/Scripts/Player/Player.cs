@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     public bool cutscene;
     public AudioSource audioSource;
     public AudioClip[] clips;
+    public GameObject weaponwheel;
+    public GameObject[] weaponselected;
 
     private CharacterController characterController;
 
@@ -235,6 +237,9 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.Alpha1))
         {
             weaponno = 0;
+            weaponselected[0].SetActive(true);
+            weaponselected[1].SetActive(false);
+            weaponselected[2].SetActive(false);
             weapon[1].SetActive(false);
             weapon[2].SetActive(false);
             slash[1].SetActive(false);
@@ -245,6 +250,9 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.Keypad2) || Input.GetKey(KeyCode.Alpha2))
             {
                 weaponno = 1;
+                weaponselected[1].SetActive(true);
+                weaponselected[0].SetActive(false);
+                weaponselected[2].SetActive(false);
                 weapon[0].SetActive(false);
                 weapon[2].SetActive(false);
                 slash[0].SetActive(false);
@@ -258,6 +266,9 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.Keypad3) || Input.GetKey(KeyCode.Alpha3))
             {
                 weaponno = 2;
+                weaponselected[2].SetActive(true);
+                weaponselected[0].SetActive(false);
+                weaponselected[1].SetActive(false);
                 weapon[0].SetActive(false);
                 weapon[1].SetActive(false);
                 slash[0].SetActive(false);
@@ -367,6 +378,11 @@ public class Player : MonoBehaviour
         {
             isAttacking = true;
         }*/
+        if(weaponwheel.activeInHierarchy == false)
+        {
+            weaponwheel.SetActive(true);
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             if (animator.GetBool("Battle") == false)
