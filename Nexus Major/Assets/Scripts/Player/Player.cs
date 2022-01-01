@@ -203,7 +203,7 @@ public class Player : MonoBehaviour
         if(jump > 0)
         {
             animator.SetBool("Jump", true);
-            audioSource.PlayOneShot(clips[Random.Range(8, 10)]);
+            audioSource.PlayOneShot(clips[Random.Range(7, 9)]);
         }
         else
         {
