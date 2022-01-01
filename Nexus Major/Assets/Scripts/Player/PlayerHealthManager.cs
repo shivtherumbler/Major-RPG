@@ -21,6 +21,7 @@ public class PlayerHealthManager : MonoBehaviour
     public GameObject healthbar;
     public Slider[] hpmp;
     public Text[] hpmptext;
+    public GameObject damage;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,15 @@ public class PlayerHealthManager : MonoBehaviour
             anim.SetBool("Death", true);
             MissionSelect(CurrentCam);
             Invoke("GameOver", 4f);
+        }
+
+        if(health < 50)
+        {
+            damage.SetActive(true);
+        }
+        else
+        {
+            damage.SetActive(false);
         }
 
         if(health > maxhealth)

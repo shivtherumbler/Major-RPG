@@ -21,6 +21,7 @@ public class Mission11 : MonoBehaviour
     public GameObject openworldcivilians;
     public GameObject campaigncompleted;
     public Text objective;
+    public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class Mission11 : MonoBehaviour
 
         if(finalboss.GetComponentInChildren<AIHealthSystem>().health <= 0)
         {
-            MissionComplete();
+            StartCoroutine(Wait());
         }
 
         objective.text = " This is the Final Battle! Fight back and take back your village from the Nexus Corp.";
@@ -64,6 +65,7 @@ public class Mission11 : MonoBehaviour
         manager.xptext.text = "2500 XP earned!";
         cutscenetrigger.SetActive(true);
         Cursor.visible = true;
+        audio.Play();
     }
 
     public void MissionSelect(CinemachineVirtualCamera NextCam)
@@ -99,4 +101,9 @@ public class Mission11 : MonoBehaviour
         Cursor.visible = false;
     }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(5);
+        MissionComplete();
+    }
 }

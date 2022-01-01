@@ -14813,6 +14813,7 @@ GameObject:
   - component: {fileID: 8098252872502450895}
   - component: {fileID: 8098252872502450888}
   - component: {fileID: -6787154180193710457}
+  - component: {fileID: 2403845607158522501}
   m_Layer: 0
   m_Name: Enemy 4
   m_TagString: Enemy
@@ -15010,6 +15011,26 @@ MonoBehaviour:
   waittime: 0
   distance: 0
   waveSpawnner: {fileID: 0}
+--- !u!114 &2403845607158522501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2880911107039640126}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6deeb4224537ab4479190512b51a2794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 4919418338871386238, guid: 610363ab7098d5947ae8e7cb8d96da38, type: 3}
+  muzzlespawn: {fileID: 8098252872159391283}
+  muzzleflash: {fileID: 3831885723408184553, guid: 2d89e8a14c9f087459d53501362e2156, type: 3}
+  Muzzle: {fileID: 8098252872159391282}
+  FireRate: 0.1
+  S: 0
+  shootsound: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &2880911107039640160
 GameObject:
   m_ObjectHideFlags: 0

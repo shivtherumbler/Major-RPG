@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 8418141479833794537}
   - component: {fileID: 8418141479833794536}
   - component: {fileID: 8418141479833794543}
+  - component: {fileID: 2743125581839498170}
   m_Layer: 0
   m_Name: LightBipedMech_Army
   m_TagString: Untagged
@@ -480,6 +481,26 @@ MonoBehaviour:
   boss: 1
   waittime: 0
   distance: 0
+--- !u!114 &2743125581839498170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543113652154783513}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6deeb4224537ab4479190512b51a2794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 4919418338871386238, guid: 610363ab7098d5947ae8e7cb8d96da38, type: 3}
+  muzzlespawn: {fileID: 8418141481116238612}
+  muzzleflash: {fileID: 3831885723408184553, guid: 2d89e8a14c9f087459d53501362e2156, type: 3}
+  Muzzle: {fileID: 8418141481116238613}
+  FireRate: 0.1
+  S: 0
+  shootsound: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &2543113652154783515
 GameObject:
   m_ObjectHideFlags: 0
@@ -8714,6 +8735,7 @@ MonoBehaviour:
   - {fileID: 2810700194084494966}
   - {fileID: 7104547826839609975}
   damagepopup: {fileID: 2482577687471222703, guid: cccaa1c744f506046a10022cd6bd2d4d, type: 3}
+  onetime: 0
 --- !u!54 &8418141480763485154
 Rigidbody:
   m_ObjectHideFlags: 0
