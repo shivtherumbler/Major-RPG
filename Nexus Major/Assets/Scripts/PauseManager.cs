@@ -27,6 +27,7 @@ public class PauseManager : MonoBehaviour
     void Start()
     {
         PausePanel.SetActive(false);
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

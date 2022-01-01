@@ -119,6 +119,7 @@ public class StealthEnemy : MonoBehaviour
 
     public void Gameover()
     {
+        Cursor.visible = true; 
         Time.timeScale = 0f;
         gameoverPanel.SetActive(true);
     }

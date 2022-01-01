@@ -205,7 +205,7 @@ public class WaveAI : MonoBehaviour
 
     public void GameOver()
     {
-
+        Cursor.visible = true;
         Time.timeScale = 0f;
         gameoverPanel.SetActive(true);
     }
