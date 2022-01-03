@@ -179,6 +179,7 @@ public class PauseManager : MonoBehaviour
     {
         shoppanel.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     public void YoungSelect(CinemachineFreeLook NextCam)

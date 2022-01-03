@@ -40,6 +40,7 @@ public class Mission9 : MonoBehaviour
         enemies.SetActive(true);
         cage.SetActive(true);
         finalPlayer.GetComponent<MissionWaypoint>().target = cage.transform;
+        finalPlayer.GetComponent<MoveToTarget>().Targets = null;
         MissionSelect(MissionCam);
         companion.GetComponent<CompanionAI>().ongoingmission = true;
         StartCoroutine(EscapeMission(EscapeCam));

@@ -45,6 +45,7 @@ public class Mission10 : MonoBehaviour
         enemies.SetActive(true);
         supplies.SetActive(true);
         finalPlayer.GetComponent<MissionWaypoint>().target = supplies.transform;
+        finalPlayer.GetComponent<MoveToTarget>().Targets = null;
         MissionSelect(MissionCam);
         companion.GetComponent<CompanionAI>().ongoingmission = true;
         StartCoroutine(EscapeMission(EscapeCam));

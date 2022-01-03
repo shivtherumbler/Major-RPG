@@ -43,6 +43,7 @@ public class OpenWorldEnemy : MonoBehaviour
                         if(active[i] == false)
                         {
                             transform.GetChild(i).gameObject.SetActive(true);
+                            transform.GetChild(i).gameObject.GetComponent<LineOfSight>().gun.GetComponent<Weapons>().CanFire = true;
                             active[i] = true;
                         }
 

@@ -8,7 +8,7 @@ public class Weapons : MonoBehaviour
     public Transform muzzlespawn;
     public GameObject muzzleflash;
     public GameObject Muzzle;
-    private bool CanFire;
+    public bool CanFire;
     public float FireRate = 0.1f;
     public bool S;
     public AudioSource shootsound;

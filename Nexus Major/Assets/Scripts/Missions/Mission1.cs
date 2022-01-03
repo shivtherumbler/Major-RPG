@@ -43,6 +43,7 @@ public class Mission1 : MonoBehaviour
         
         enemies.SetActive(true);
         villagers.SetActive(true);
+        finalPlayer.GetComponent<MoveToTarget>().Targets = null;
         finalPlayer.GetComponent<MissionWaypoint>().target = villagers.transform;
         MissionSelect(MissionCam);
         companion.GetComponent<CompanionAI>().ongoingmission = true;

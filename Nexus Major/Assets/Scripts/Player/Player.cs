@@ -467,6 +467,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 shopPanel.SetActive(true);
+                Cursor.visible = true;
                 Time.timeScale = 0;
             }
         }
@@ -512,6 +513,7 @@ public class Player : MonoBehaviour
 
             shopPanel.SetActive(false);
             itemcollectedtext.GetComponent<Text>().text = "";
+            Cursor.visible = false;
         }
         /*if (other.tag == "ladder")
         {

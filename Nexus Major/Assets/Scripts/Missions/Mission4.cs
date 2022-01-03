@@ -43,6 +43,7 @@ public class Mission4 : MonoBehaviour
         enemies.SetActive(true);
         villagers.SetActive(true);
         finalPlayer.GetComponent<MissionWaypoint>().target = villagers.transform;
+        finalPlayer.GetComponent<MoveToTarget>().Targets = null;
         MissionSelect(MissionCam);
         companion.GetComponent<CompanionAI>().ongoingmission = true;
         StartCoroutine(EscapeMission(EscapeCam));

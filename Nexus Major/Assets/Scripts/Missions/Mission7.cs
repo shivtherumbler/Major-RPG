@@ -40,6 +40,7 @@ public class Mission7 : MonoBehaviour
         enemies.SetActive(true);
         safe.SetActive(true);
         finalPlayer.GetComponent<MissionWaypoint>().target = safe.transform;
+        finalPlayer.GetComponent<MoveToTarget>().Targets = null;
         MissionSelect(MissionCam);
         companion.GetComponent<CompanionAI>().ongoingmission = true;
         StartCoroutine(EscapeMission(EscapeCam));

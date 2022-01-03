@@ -46,6 +46,7 @@ public class Mission3 : MonoBehaviour
         enemies.SetActive(true);
         shop.SetActive(true);
         finalPlayer.GetComponent<MissionWaypoint>().target = shop.transform;
+        finalPlayer.GetComponent<MoveToTarget>().Targets = null;
         MissionSelect(MissionCam);
         companion.GetComponent<CompanionAI>().ongoingmission = true;
         StartCoroutine(EscapeMission(EscapeCam));
